@@ -49,9 +49,7 @@ header { position:sticky; top:0; z-index:10; }
   display:none; font-size:1.5rem; background:none; border:none;
   color:var(--light); cursor:pointer;
 }
-#nav-list {
-  list-style:none; display:flex; gap:1rem;
-}
+#nav-list { list-style:none; display:flex; gap:1rem; }
 #nav-list.show {
   display:flex; flex-direction:column;
   position:absolute; top:100%; right:0; width:100%;

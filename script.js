@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const darkSwitch  = document.getElementById('darkSwitch');
   const langToggle  = document.getElementById('lang-toggle');
 
-  // 1. Progress bar + Back-to-top + Active nav
+  // Progress + Back-to-top + Active nav
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // 2. Dark mode persistence
+  // Dark mode persistence
   if (darkSwitch) {
     darkSwitch.checked = localStorage.getItem('dark') === 'true';
     document.body.classList.toggle('dark', darkSwitch.checked);
@@ -35,23 +35,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Language toggle persistence
+  // Language toggle
   const texts = {
     ar: {
-      nav: ['الرئيسية','الخدمات','المكتبة الكيميائية','مدونة','تواصل معنا'],
+      nav: ['الرئيسية','الخدمات','المدونة','تواصل معنا'],
       heroTitle: 'الرابطة الكيميائية',
       heroDesc: 'بوابة للكيميائيين لمشاركة المعارف وربط الموردين بالمحترفين في الجزائر وشمال إفريقيا',
       submit: 'إرسال',
-      blogTitle: 'مدونة الرابطة',
-      labels: ['مصادر المعرفة','الاستشارات والأدوات التفاعلية','الموارد والموردون','الخدمات المخبريّة والتحاليل','فرص وظيفية']
+      blogTitle: 'مدونة الرابطة'
     },
     en: {
-      nav: ['Home','Services','Library','Blog','Contact'],
+      nav: ['Home','Services','Blog','Contact'],
       heroTitle: 'Chemical Network',
       heroDesc: 'A portal for chemists to share knowledge and connect suppliers & professionals in Algeria & North Africa',
       submit: 'Submit',
-      blogTitle: 'Network Blog',
-      labels: ['Knowledge Resources','Consultations & Tools','Suppliers & Resources','Lab Services & Analyses','Job Opportunities']
+      blogTitle: 'Network Blog'
     }
   };
   const applyLang = lang => {
@@ -59,9 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('hero-title').textContent = texts[lang].heroTitle;
     document.getElementById('hero-desc').textContent = texts[lang].heroDesc;
     document.querySelector('.btn-submit').textContent = texts[lang].submit;
-    document.querySelector('#blog h2').textContent     = texts[lang].blogTitle;
-    document.querySelectorAll('.service-group h2')
-            .forEach((h2,i) => h2.textContent = texts[lang].labels[i]);
+    document.querySelector('#blog h2').textContent = texts[lang].blogTitle;
     langToggle.textContent = lang === 'ar' ? 'EN' : 'AR';
     document.documentElement.lang = lang;
     document.documentElement.dir  = lang === 'ar' ? 'rtl' : 'ltr';
@@ -74,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     applyLang(lang);
   });
 
-  // 4. Contact form validation + reCAPTCHA
+  // Contact form validation + reCAPTCHA
   const form = document.getElementById('contact-form');
   const successBox = document.getElementById('success-message');
   if (form) {
@@ -83,20 +79,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const fields = ['name','email','subject','message'];
       let valid = true;
 
-      // Clear errors
       fields.forEach(id => {
         document.getElementById(`error-${id}`).textContent = '';
       });
       document.getElementById('error-recaptcha').textContent = '';
 
-      // Category check
+      // category check
       const category = form.querySelector('input[name="category"]:checked');
       if (!category) {
         valid = false;
         alert('يرجى اختيار نوع المرسل.');
       }
 
-      // Field checks
+      // field checks
       fields.forEach(id => {
         const el = document.getElementById(id);
         if (!el.value.trim()) {
@@ -116,10 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!valid) return;
 
-      // On success
       form.hidden = true;
       successBox.classList.add('show');
-      // هنا يمكنك إضافة fetch/AJAX لإرسال البيانات فعلياً…
+      // يمكنك هنا إرسال البيانات عبر AJAX…
     });
   }
 });
