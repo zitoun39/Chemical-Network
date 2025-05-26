@@ -10,6 +10,7 @@
   --bg-dark: #121212;
 }
 
+/* Reset & Base */
 * { box-sizing:border-box; margin:0; padding:0; }
 body {
   font-family: var(--font-base);
@@ -78,9 +79,8 @@ header { position:sticky; top:0; z-index:10; }
 .hero h1 { font-size:2.5rem; margin-bottom:0.5rem; }
 .hero p { margin-bottom:1rem; opacity:0.9; }
 .hero input {
-  width:60%; max-width:400px;
-  padding:0.75rem; border:none; border-radius:30px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  width:60%; max-width:400px; padding:0.75rem; border:none;
+  border-radius:30px; box-shadow:0 2px 6px rgba(0,0,0,0.2);
 }
 
 /* Service Groups */
@@ -128,25 +128,33 @@ body.dark .card { background:#1e1e1e; }
 body.dark .contact { background: var(--bg-dark); }
 
 .contact-container {
-  display:grid; gap:2rem; max-width:900px; margin:auto;
+  display:grid; gap:2rem; max-width:900px; margin:auto; padding:2rem 1rem;
 }
-@media(min-width:768px) {
-  .contact-container { grid-template-columns:1fr 1fr; }
+@media(max-width:768px) {
+  .contact-container { grid-template-columns:1fr; }
 }
 
-/* Form Intro */
-.form-intro { text-align:center; }
-.form-intro h2 { font-size:2rem; margin-bottom:0.5rem; }
-.form-intro p { margin-bottom:1rem; color:#555; }
+/* Intro Card */
+.intro-card {
+  background: var(--light); padding:2rem;
+  border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  text-align:center;
+}
+body.dark .intro-card { background:#1e1e1e; }
+.contact-img {
+  max-width:100%; height:auto; margin-bottom:1rem;
+}
+.intro-card h2 { font-size:1.8rem; margin-bottom:0.5rem; }
+.intro-card p { margin-bottom:1rem; color:#555; }
+
+/* Contact Types */
 .contact-types {
-  display:flex; flex-wrap:wrap; justify-content:center;
-  gap:1rem; margin-bottom:1.5rem;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:1rem;
 }
 .contact-types label {
-  display:flex; align-items:center; gap:0.5rem;
-  cursor:pointer; font-weight:500;
+  display:flex; align-items:center; gap:0.5rem; cursor:pointer; font-weight:500;
 }
-contact-types input[type="radio"] {
+.contact-types input[type="radio"] {
   accent-color: var(--primary); width:1rem; height:1rem;
 }
 
@@ -156,14 +164,10 @@ contact-types input[type="radio"] {
   border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 body.dark .form-container { background:#1e1e1e; }
-
 .form-group { margin-bottom:1rem; text-align:right; }
-.form-group label {
-  display:block; margin-bottom:0.4rem; font-weight:500;
-}
+.form-group label { display:block; margin-bottom:0.4rem; font-weight:500; }
 .form-group input, .form-group textarea {
-  width:100%; padding:0.75rem;
-  border:1px solid #ccc; border-radius:4px;
+  width:100%; padding:0.75rem; border:1px solid #ccc; border-radius:4px;
   transition:border-color .3s;
 }
 .form-group input:focus, .form-group textarea:focus {
@@ -172,29 +176,22 @@ body.dark .form-container { background:#1e1e1e; }
 .error-message {
   color:#e53935; font-size:0.85rem; margin-top:4px; min-height:1em;
 }
-
-/* Submit Button */
 .btn-submit {
-  width:100%; padding:0.75rem;
-  background: var(--primary); color: var(--light);
-  border:none; border-radius:4px; cursor:pointer;
+  width:100%; padding:0.75rem; background: var(--primary);
+  color: var(--light); border:none; border-radius:4px; cursor:pointer;
   transition:background .3s;
 }
 .btn-submit:hover { background: var(--secondary); }
-
-/* Success Message */
 .success-message {
-  display:none; margin-top:1rem;
-  padding:1rem; background:#43a047; color:#fff;
-  text-align:center; border-radius:4px;
+  display:none; margin-top:1rem; padding:1rem;
+  background:#43a047; color:#fff; text-align:center; border-radius:4px;
 }
 .success-message.show { display:block; }
 
 /* Footer */
 .footer-custom {
   background:#263238; color:var(--light);
-  text-align:center; padding:1.5rem 1rem;
-  font-size:0.9rem;
+  text-align:center; padding:1.5rem 1rem; font-size:0.9rem;
 }
 .footer-custom p { margin-bottom:0.5rem; }
 .footer-nav a {
@@ -206,9 +203,8 @@ body.dark .form-container { background:#1e1e1e; }
 #back-to-top {
   position:fixed; bottom:30px; right:30px;
   background:var(--primary); color:var(--light);
-  border:none; border-radius:50%;
-  width:45px; height:45px; font-size:1.5rem;
-  cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,0.3);
+  border:none; border-radius:50%; width:45px; height:45px;
+  font-size:1.5rem; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,0.3);
   opacity:0; pointer-events:none; transition:opacity .3s;
 }
 #back-to-top.show { opacity:1; pointer-events:auto; }

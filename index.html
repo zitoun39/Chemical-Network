@@ -9,13 +9,12 @@
 
   <!-- خط Tajawal -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="./style.css"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body id="top">
 
   <!-- تخطي إلى المحتوى -->
   <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
-
   <!-- شريط التقدّم -->
   <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 
@@ -56,7 +55,6 @@
 
     <!-- Services -->
     <section class="services" id="services">
-      <!-- 1. مصادر المعرفة -->
       <div class="service-group">
         <h2>مصادر المعرفة</h2>
         <div class="cards">
@@ -65,7 +63,6 @@
           <div class="card" data-tooltip="التناضح العكسي"><span>🔄</span><a href="#">التناضح العكسي</a></div>
         </div>
       </div>
-      <!-- 2. الاستشارات والأدوات التفاعلية -->
       <div class="service-group">
         <h2>الاستشارات والأدوات التفاعلية</h2>
         <div class="cards">
@@ -74,15 +71,13 @@
           <div class="card" data-tooltip="الجدول الدوري للعناصر"><span>🧪</span><a href="#">الجدول الدوري للعناصر</a></div>
         </div>
       </div>
-      <!-- 3. الموارد والموردون -->
       <div class="service-group">
         <h2>الموارد والموردون</h2>
         <div class="cards">
-          <div class="card" data-tooltip="موردي الأجهزة"><span>🔬</span><a href="#suppliers">موردي الأجهزة</a></div>
+          <div class="card" data-tooltip="موردي الأجهزة"><span>🔬</span><a href="#">موردي الأجهزة</a></div>
           <div class="card" data-tooltip="موردي المواد الكيميائية"><span>⚗️</span><a href="#">موردي المواد الكيميائية</a></div>
         </div>
       </div>
-      <!-- 4. الخدمات المخبريّة والتحاليل -->
       <div class="service-group">
         <h2>الخدمات المخبريّة والتحاليل</h2>
         <div class="cards">
@@ -90,7 +85,6 @@
           <div class="card" data-tooltip="تحاليل بكتريولوجية"><span>🦠</span><a href="#">تحاليل بكتريولوجية</a></div>
         </div>
       </div>
-      <!-- 5. فرص وظيفية -->
       <div class="service-group">
         <h2>فرص وظيفية</h2>
         <div class="cards">
@@ -109,19 +103,20 @@
     <section class="services" id="blog">
       <h2>مدونة الرابطة</h2>
       <div class="cards">
-        <div class="card" data-tooltip="السلامة الكيميائية"><span>📰</span><a href="#">5 نصائح للسلامة الكيميائية في المخبر</a></div>
-        <div class="card" data-tooltip="المحاليل القياسية"><span>🧴</span><a href="#">المحاليل القياسية: التحضير والتطبيق</a></div>
-        <div class="card" data-tooltip="معالجة المياه"><span>🌍</span><a href="#">الكيمياء ومعالجة المياه في شمال إفريقيا</a></div>
+        <div class="card"><span>📰</span><a href="#">5 نصائح للسلامة الكيميائية في المخبر</a></div>
+        <div class="card"><span>🧴</span><a href="#">المحاليل القياسية: التحضير والتطبيق</a></div>
+        <div class="card"><span>🌍</span><a href="#">الكيمياء ومعالجة المياه في شمال إفريقيا</a></div>
       </div>
     </section>
 
-    <!-- تواصل معنا المحسن -->
+    <!-- قسم تواصل معنا -->
     <section class="contact" id="contact">
       <div class="contact-container">
-        <!-- اختيار نوع المرسل -->
-        <div class="form-intro">
+        <!-- بطاقة المقدمة مع صورة -->
+        <div class="intro-card">
+          <img src="contact-illustration.png" alt="اتصل بنا" class="contact-img"/>
           <h2>تواصل معنا</h2>
-          <p>اختر نوعك ثم املأ النموذج، وسنعاود التواصل معك في أقرب وقت.</p>
+          <p>اختر نوعك ثم املأ النموذج وسنعاود التواصل معك في أقرب وقت.</p>
           <div class="contact-types">
             <label><input type="radio" name="category" value="student" required> طالب/باحث</label>
             <label><input type="radio" name="category" value="supplier"> مورد أجهزة</label>
@@ -180,6 +175,6 @@
 
   <!-- reCAPTCHA + السكربت الرئيسي -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

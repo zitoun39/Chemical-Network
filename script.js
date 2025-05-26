@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const darkSwitch  = document.getElementById('darkSwitch');
   const langToggle  = document.getElementById('lang-toggle');
 
-  // 1. شريط التقدم + زر العودة للأعلى + تمييز روابط القائمة
+  // 1. Progress bar + Back-to-top + Active nav
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // 2. الوضع الداكن مع حفظ التفضيل
+  // 2. Dark mode persistence
   if (darkSwitch) {
     darkSwitch.checked = localStorage.getItem('dark') === 'true';
     document.body.classList.toggle('dark', darkSwitch.checked);
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. تبديل اللغة مع حفظ التفضيل
+  // 3. Language toggle persistence
   const texts = {
     ar: {
       nav: ['الرئيسية','الخدمات','المكتبة الكيميائية','مدونة','تواصل معنا'],
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('hero-title').textContent = texts[lang].heroTitle;
     document.getElementById('hero-desc').textContent = texts[lang].heroDesc;
     document.querySelector('.btn-submit').textContent = texts[lang].submit;
-    document.querySelector('#blog h2').textContent = texts[lang].blogTitle;
+    document.querySelector('#blog h2').textContent     = texts[lang].blogTitle;
     document.querySelectorAll('.service-group h2')
             .forEach((h2,i) => h2.textContent = texts[lang].labels[i]);
     langToggle.textContent = lang === 'ar' ? 'EN' : 'AR';
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     applyLang(lang);
   });
 
-  // 4. نموذج التواصل: تحقق فوري + reCAPTCHA
+  // 4. Contact form validation + reCAPTCHA
   const form = document.getElementById('contact-form');
   const successBox = document.getElementById('success-message');
   if (form) {
@@ -83,20 +83,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const fields = ['name','email','subject','message'];
       let valid = true;
 
-      // مسح الأخطاء
+      // Clear errors
       fields.forEach(id => {
         document.getElementById(`error-${id}`).textContent = '';
       });
       document.getElementById('error-recaptcha').textContent = '';
 
-      // اختيار نوع المرسل
+      // Category check
       const category = form.querySelector('input[name="category"]:checked');
       if (!category) {
         valid = false;
         alert('يرجى اختيار نوع المرسل.');
       }
 
-      // التحقق من الحقول
+      // Field checks
       fields.forEach(id => {
         const el = document.getElementById(id);
         if (!el.value.trim()) {
@@ -108,23 +108,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // التحقق من reCAPTCHA
-      if (grecaptcha && grecaptcha.getResponse().length === 0) {
+      // reCAPTCHA check
+      if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse().length === 0) {
         valid = false;
         document.getElementById('error-recaptcha').textContent = 'يرجى تأكيد أنك لست روبوت.';
       }
 
       if (!valid) return;
 
-      // عند النجاح
+      // On success
       form.hidden = true;
       successBox.classList.add('show');
-      // هنا يمكن إرسال البيانات إلى الخادم عبر AJAX…
+      // هنا يمكنك إضافة fetch/AJAX لإرسال البيانات فعلياً…
     });
   }
 });
 
-// فتح/إغلاق القائمة على الجوال
+// Mobile menu toggle
 function toggleMenu() {
   const nav = document.getElementById('nav-list');
   const btn = document.querySelector('.menu-toggle');
