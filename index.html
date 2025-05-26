@@ -1,70 +1,200 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>الرابطة الكيميائية | الرئيسية</title>
   <meta name="description" content="الرابطة الكيميائية – البوابة الرئيسية لمشاركة المعرفة وربط الموردين بالمحترفين في الجزائر وشمال إفريقيا.">
   <meta name="keywords" content="كيمياء, مختبر, الكيميائيين, موارد">
 
   <!-- خط Tajawal -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./style.css"/>
 </head>
 <body id="top">
 
-  <!-- Skip to content -->
+  <!-- رابط تخطي المحتوى -->
   <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
-  <!-- Progress Bar -->
-  <div id="progress-bar"></div>
 
-  <!-- HEADER -->
+  <!-- شريط التقدّم -->
+  <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- الهيدر وقائمة التنقل -->
   <header>
-    <nav class="container" aria-label="القائمة الرئيسية">
+    <nav class="container" role="navigation" aria-label="القائمة الرئيسية">
       <div class="logo">
-        <a href="index.html">
+        <a href="#top">
           <img src="https://png.pngtree.com/element_pic/00/16/07/115783931601b5c.jpg"
-               alt="شعار الرابطة الكيميائية" class="logo-img">
-          <strong>الرابطة الكيميائية</strong>
+               alt="شعار الرابطة الكيميائية" class="logo-img"/>
+          <strong id="site-title">الرابطة الكيميائية</strong>
         </a>
       </div>
       <button class="menu-toggle" onclick="toggleMenu()" aria-label="تبديل القائمة" aria-expanded="false">☰</button>
       <ul id="nav-list">
-        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
-        <li><a href="services.html" class="nav-link">الخدمات</a></li>
-        <li><a href="library.html" class="nav-link">المكتبة الكيميائية</a></li>
-        <li><a href="blog.html" class="nav-link">مدونة</a></li>
-        <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+        <li><a href="#top" class="nav-link">الرئيسية</a></li>
+        <li><a href="#services" class="nav-link">الخدمات</a></li>
+        <li><a href="#library" class="nav-link">المكتبة الكيميائية</a></li>
+        <li><a href="#blog" class="nav-link">مدونة</a></li>
+        <li><a href="#contact" class="nav-link">تواصل معنا</a></li>
       </ul>
       <div class="toggles">
         <button id="lang-toggle" aria-label="تبديل اللغة">EN</button>
-        <input type="checkbox" id="darkSwitch">
+        <input type="checkbox" id="darkSwitch" aria-label="تبديل الوضع الليلي"/>
         <label for="darkSwitch" title="تبديل الوضع الليلي">🌙</label>
       </div>
     </nav>
   </header>
 
-  <!-- MAIN -->
+  <!-- المحتوى الرئيسي -->
   <main id="main-content">
+    <!-- Hero Section -->
     <section class="hero">
-      <h1>الرابطة الكيميائية</h1>
-      <p>بوابة للكيميائيين لمشاركة المعارف وربط الموردين بالمحترفين في الجزائر وشمال إفريقيا</p>
-      <input type="text" id="search-hero" placeholder="ابحث عن خدمة…" aria-label="ابحث عن خدمة">
+      <h1 id="hero-title">الرابطة الكيميائية</h1>
+      <p id="hero-desc">بوابة للكيميائيين لمشاركة المعارف وربط الموردين بالمحترفين في الجزائر وشمال إفريقيا</p>
+      <input type="text" id="search-hero" placeholder="ابحث عن خدمة…" aria-label="ابحث عن خدمة"/>
+    </section>
+
+    <!-- Services with Groups -->
+    <section class="services" id="services">
+      <!-- 1. مصادر المعرفة -->
+      <div class="service-group">
+        <h2>مصادر المعرفة</h2>
+        <div class="cards">
+          <div class="card" data-tooltip="المكتبة الكيميائية">
+            <span>📚</span><a href="#library">المكتبة الكيميائية</a>
+          </div>
+          <div class="card" data-tooltip="مواقع تعليمية">
+            <span>🎓</span><a href="#">مواقع تعليمية</a>
+          </div>
+          <div class="card" data-tooltip="التناضح العكسي">
+            <span>🔄</span><a href="#">التناضح العكسي</a>
+          </div>
+        </div>
+      </div>
+      <!-- 2. الاستشارات والأدوات التفاعلية -->
+      <div class="service-group">
+        <h2>الاستشارات والأدوات التفاعلية</h2>
+        <div class="cards">
+          <div class="card" data-tooltip="استشارات فنية">
+            <span>💡</span><a href="#">استشارات فنية</a>
+          </div>
+          <div class="card" data-tooltip="الحاسبة العلمية الكيميائية">
+            <span>🧮</span><a href="#">الحاسبة العلمية الكيميائية</a>
+          </div>
+          <div class="card" data-tooltip="الجدول الدوري للعناصر">
+            <span>🧪</span><a href="#">الجدول الدوري للعناصر</a>
+          </div>
+        </div>
+      </div>
+      <!-- 3. الموارد والموردون -->
+      <div class="service-group">
+        <h2>الموارد والموردون</h2>
+        <div class="cards">
+          <div class="card" data-tooltip="موردي الأجهزة">
+            <span>🔬</span><a href="#suppliers">موردي الأجهزة</a>
+          </div>
+          <div class="card" data-tooltip="موردي المواد الكيميائية">
+            <span>⚗️</span><a href="#">موردي المواد الكيميائية</a>
+          </div>
+        </div>
+      </div>
+      <!-- 4. الخدمات المخبريّة والتحاليل -->
+      <div class="service-group">
+        <h2>الخدمات المخبريّة والتحاليل</h2>
+        <div class="cards">
+          <div class="card" data-tooltip="تحاليل فيزيو كيميائية">
+            <span>🔍</span><a href="#">تحاليل فيزيو كيميائية</a>
+          </div>
+          <div class="card" data-tooltip="تحاليل بكتريولوجية">
+            <span>🦠</span><a href="#">تحاليل بكتريولوجية</a>
+          </div>
+        </div>
+      </div>
+      <!-- 5. فرص وظيفية -->
+      <div class="service-group">
+        <h2>فرص وظيفية</h2>
+        <div class="cards">
+          <div class="card" data-tooltip="وظائف">
+            <span>💼</span><a href="#">وظائف</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم تواصل معنا -->
+    <section class="contact" id="contact">
+      <div class="contact-container">
+        <!-- معلومات الاتصال -->
+        <div class="contact-info">
+          <h3>معلومات الاتصال</h3>
+          <div class="info-item"><span class="icon">📞</span><a href="tel:+966111234567">+966 11 123 4567</a></div>
+          <div class="info-item"><span class="icon">✉️</span><a href="mailto:info@lab-scientific.com">info@lab-scientific.com</a></div>
+          <div class="info-item"><span class="icon">📍</span><address>الرياض، المملكة العربية السعودية</address></div>
+        </div>
+        <!-- النموذج -->
+        <div class="form-container">
+          <h3>تواصل معنا</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">الاسم الكامل</label>
+              <input type="text" id="name" required>
+              <span class="error-message" id="error-name"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">البريد الإلكتروني</label>
+              <input type="email" id="email" required>
+              <span class="error-message" id="error-email"></span>
+            </div>
+            <div class="form-group">
+              <label for="subject">الموضوع</label>
+              <input type="text" id="subject" required>
+              <span class="error-message" id="error-subject"></span>
+            </div>
+            <div class="form-group">
+              <label for="message">الرسالة</label>
+              <textarea id="message" rows="5" required></textarea>
+              <span class="error-message" id="error-message"></span>
+            </div>
+            <!-- reCAPTCHA v2 -->
+            <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+            <span class="error-message" id="error-recaptcha"></span>
+            <button type="submit" class="btn-submit">إرسال</button>
+          </form>
+          <div id="success-message" class="success-message" hidden>
+            شكرًا لك! تم استلام رسالتك بنجاح. سنعاود التواصل معك قريبًا.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم المدونة -->
+    <section id="blog" class="services">
+      <h2>مدونة الرابطة</h2>
+      <div class="cards">
+        <div class="card" data-tooltip="السلامة الكيميائية"><span>📰</span><a href="#">5 نصائح للسلامة الكيميائية في المخبر</a></div>
+        <div class="card" data-tooltip="المحاليل القياسية"><span>🧴</span><a href="#">المحاليل القياسية: التحضير والتطبيق</a></div>
+        <div class="card" data-tooltip="معالجة المياه"><span>🌍</span><a href="#">الكيمياء ومعالجة المياه في شمال إفريقيا</a></div>
+      </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- زر العودة للأعلى -->
+  <button id="back-to-top" title="العودة للأعلى" aria-label="Back to top">↑</button>
+
+  <!-- الفوتر -->
   <footer class="footer-custom">
     <p>الرابطة الكيميائية | Chemical Network | © 2025</p>
     <nav class="footer-nav" aria-label="روابط الفوتر">
-      <a href="index.html">الرئيسية</a> |
-      <a href="services.html">الخدمات</a> |
-      <a href="library.html">المكتبة الكيميائية</a> |
-      <a href="blog.html">مدونة</a> |
-      <a href="contact.html">تواصل معنا</a>
+      <a href="#top">الرئيسية</a> |
+      <a href="#services">الخدمات</a> |
+      <a href="#library">المكتبة الكيميائية</a> |
+      <a href="#blog">مدونة</a> |
+      <a href="#contact">تواصل معنا</a>
     </nav>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="./script.js"></script>
 </body>
 </html>

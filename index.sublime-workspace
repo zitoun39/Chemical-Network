@@ -7,56 +7,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "Merge branch 'main' of https://github.com/zitoun39/chemical-network\n# Please enter a commit message to explain why this merge is necessary,\n# especially if it merges an updated upstream into a topic branch.\n#\n# Lines starting with '#' will be ignored, and an empty message aborts\n# the commit.\ngit pull origin main --allow-unrelated-histories",
-			"file": ".git/MERGE_MSG",
-			"file_size": 294,
-			"file_write_time": 133927585560063598,
-			"settings":
-			{
-				"buffer_size": 342,
-				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
-					3,
-					1,
-					"paste",
-					{
-						"event":
-						{
-							"modifier_keys":
-							{
-							},
-							"text_point": 294,
-							"x": 221.5,
-							"y": 162.5
-						}
-					},
-					"AQAAACYBAAAAAAAAVwEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAJgEAAAAAAAAmAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					4,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AQAAAFcBAAAAAAAAWAEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAVwEAAAAAAABXAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					7,
-					1,
-					"left_delete",
-					null,
-					"AQAAAFYBAAAAAAAAVgEAAAAAAAACAAAACgo",
-					"AQAAAAAAAAABAAAAWAEAAAAAAABWAQAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -90,6 +40,7 @@
 	},
 	"file_history":
 	[
+		"/D/website/.git/MERGE_MSG",
 		"/D/website/services.html",
 		"/D/website/contact",
 		"/D/website/index.html",
@@ -135,36 +86,6 @@
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": ".git/MERGE_MSG",
-					"selected": true,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 342,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								342,
-								342
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Git Formats/Git Commit.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"stack_multiselect": false,
-					"type": "text"
-				}
 			]
 		}
 	],
