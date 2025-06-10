@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الرابطة الكيميائية | المواقع التعليمية</title>
+  <meta name="description" content="دليل شامل لأفضل المواقع التعليمية في الكيمياء مع روابط مباشرة ووصف تفصيلي لكل موقع."/>
+  <meta name="keywords" content="مواقع تعليمية, كيمياء, تعليم, الجزائر"/>
+
+  <!-- خط Tajawal -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body id="top">
+
+  <!-- تخطي إلى المحتوى -->
+  <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
+  <!-- شريط التقدّم -->
+  <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- الهيدر -->
+  <header>
+    <nav class="container" role="navigation" aria-label="القائمة الرئيسية">
+      <div class="logo">
+        <a href="index.html">
+          <img src="https://png.pngtree.com/element_pic/00/16/07/115783931601b5c.jpg"
+               alt="شعار الرابطة الكيميائية" class="logo-img"/>
+          <strong id="site-title">الرابطة الكيميائية</strong>
+        </a>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="تبديل القائمة" aria-expanded="false">☰</button>
+      <ul id="nav-list">
+        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+        <li><a href="index.html#services" class="nav-link">الخدمات</a></li>
+        <li><a href="index.html#blog" class="nav-link">مدونة</a></li>
+        <li><a href="index.html#contact" class="nav-link">تواصل معنا</a></li>
+      </ul>
+      <div class="toggles">
+        <button id="lang-toggle" aria-label="تبديل اللغة">EN</button>
+        <input type="checkbox" id="darkSwitch" aria-label="تبديل الوضع الليلي"/>
+        <label for="darkSwitch" title="تبديل الوضع الليلي">🌙</label>
+      </div>
+    </nav>
+  </header>
+
+  <!-- المحتوى الرئيسي -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero educational-hero">
+      <h1 id="hero-title">المواقع التعليمية</h1>
+      <p id="hero-desc">دليل شامل لأفضل المواقع التعليمية في الكيمياء مع روابط مباشرة ووصف تفصيلي لكل موقع</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">150+</span>
+          <span class="stat-label">موقع تعليمي</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">12+</span>
+          <span class="stat-label">فئة متخصصة</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">8+</span>
+          <span class="stat-label">لغات متاحة</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="مسار التنقل">
+      <ol>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="index.html#services">الخدمات</a></li>
+        <li><span aria-current="page">المواقع التعليمية</span></li>
+      </ol>
+    </nav>
+
+    <!-- Educational Websites Container -->
+    <div class="educational-container">
+
+      <!-- Sidebar Filters -->
+      <aside class="filter-sidebar" role="complementary" aria-label="خيارات الفلترة">
+        <div class="filter-header">
+          <h2>فلترة المواقع</h2>
+          <button id="clear-filters" class="btn-secondary" aria-label="مسح جميع الفلاتر">مسح الكلّ</button>
+        </div>
+
+        <div class="filter-group">
+          <label for="search-websites">البحث في المواقع</label>
+          <input type="text" id="search-websites" placeholder="ابحث في أسماء المواقع والأوصاف..." aria-label="البحث في المواقع">
+        </div>
+
+        <div class="filter-group">
+          <label for="sort-by">ترتيب بحسب:</label>
+          <select id="sort-by" aria-label="ترتيب النتائج">
+            <option value="name">الاسم (أ–ي)</option>
+            <option value="category">الفئة</option>
+            <option value="rating">التقييم</option>
+            <option value="popularity">الشعبية</option>
+          </select>
+        </div>
+
+        <details class="filter-group" open>
+          <summary>الفئات التعليمية</summary>
+          <div class="filter-options" role="group" aria-label="الفئات التعليمية">
+            <label class="filter-option">
+              <input type="checkbox" value="general" aria-describedby="general-count">
+              <span class="filter-text">كيمياء عامة</span>
+              <span class="filter-count" id="general-count">(25)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="organic" aria-describedby="organic-count">
+              <span class="filter-text">كيمياء عضوية</span>
+              <span class="filter-count" id="organic-count">(18)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="inorganic" aria-describedby="inorganic-count">
+              <span class="filter-text">كيمياء غير عضوية</span>
+              <span class="filter-count" id="inorganic-count">(15)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="analytical" aria-describedby="analytical-count">
+              <span class="filter-text">كيمياء تحليلية</span>
+              <span class="filter-count" id="analytical-count">(12)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="physical" aria-describedby="physical-count">
+              <span class="filter-text">كيمياء فيزيائية</span>
+              <span class="filter-count" id="physical-count">(10)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="biochemistry" aria-describedby="biochemistry-count">
+              <span class="filter-text">كيمياء حيوية</span>
+              <span class="filter-count" id="biochemistry-count">(8)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="simulation" aria-describedby="simulation-count">
+              <span class="filter-text">محاكاة ومختبرات افتراضية</span>
+              <span class="filter-count" id="simulation-count">(20)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="tools" aria-describedby="tools-count">
+              <span class="filter-text">أدوات وحاسبات</span>
+              <span class="filter-count" id="tools-count">(15)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="courses" aria-describedby="courses-count">
+              <span class="filter-text">دورات تدريبية</span>
+              <span class="filter-count" id="courses-count">(22)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="reference" aria-describedby="reference-count">
+              <span class="filter-text">مراجع ومصادر</span>
+              <span class="filter-count" id="reference-count">(30)</span>
+            </label>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>مستوى التعليم</summary>
+          <div class="filter-options" role="group" aria-label="مستوى التعليم">
+            <label class="filter-option">
+              <input type="checkbox" value="high-school" aria-describedby="high-school-count">
+              <span class="filter-text">المرحلة الثانوية</span>
+              <span class="filter-count" id="high-school-count">(35)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="undergraduate" aria-describedby="undergraduate-count">
+              <span class="filter-text">المرحلة الجامعية</span>
+              <span class="filter-count" id="undergraduate-count">(65)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="graduate" aria-describedby="graduate-count">
+              <span class="filter-text">الدراسات العليا</span>
+              <span class="filter-count" id="graduate-count">(40)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="professional" aria-describedby="professional-count">
+              <span class="filter-text">التطوير المهني</span>
+              <span class="filter-count" id="professional-count">(25)</span>
+            </label>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>اللغة</summary>
+          <div class="filter-options" role="group" aria-label="اللغة">
+            <label class="filter-option">
+              <input type="checkbox" value="arabic" aria-describedby="arabic-count">
+              <span class="filter-text">العربية</span>
+              <span class="filter-count" id="arabic-count">(45)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="english" aria-describedby="english-count">
+              <span class="filter-text">الإنجليزية</span>
+              <span class="filter-count" id="english-count">(85)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="french" aria-describedby="french-count">
+              <span class="filter-text">الفرنسية</span>
+              <span class="filter-count" id="french-count">(20)</span>
+            </label>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>نوع المحتوى</summary>
+          <div class="filter-options" role="group" aria-label="نوع المحتوى">
+            <label class="filter-option">
+              <input type="checkbox" value="free" aria-describedby="free-count">
+              <span class="filter-text">مجاني</span>
+              <span class="filter-count" id="free-count">(120)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="paid" aria-describedby="paid-count">
+              <span class="filter-text">مدفوع</span>
+              <span class="filter-count" id="paid-count">(30)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="interactive" aria-describedby="interactive-count">
+              <span class="filter-text">تفاعلي</span>
+              <span class="filter-count" id="interactive-count">(55)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="video" aria-describedby="video-count">
+              <span class="filter-text">فيديو</span>
+              <span class="filter-count" id="video-count">(40)</span>
+            </label>
+          </div>
+        </details>
+      </aside>
+
+      <!-- Websites Content -->
+      <section class="websites-content" role="main" aria-label="محتوى المواقع التعليمية">
+        <div class="websites-header">
+          <h2 class="results-title">النتائج <span id="results-count">(150 موقع)</span></h2>
+          <div class="view-controls">
+            <button class="view-btn active" data-view="grid" aria-label="عرض شبكي" title="عرض شبكي">
+              <span aria-hidden="true">⊞</span>
+            </button>
+            <button class="view-btn" data-view="list" aria-label="عرض قائمة" title="عرض قائمة">
+              <span aria-hidden="true">☰</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="websites-grid" id="websites-grid">
+          <!-- مثال بطاقة موقع -->
+          <article class="website-card"
+                   data-name="Khan Academy Chemistry"
+                   data-category="courses"
+                   data-level="high-school"
+                   data-language="english"
+                   data-type="free"
+                   data-rating="4.9">
+            <div class="website-header">
+              <div class="website-icon">
+                <img src="https://via.placeholder.com/60x60.png?text=KA" alt="Khan Academy" class="site-icon">
+              </div>
+              <div class="website-info">
+                <h3>Khan Academy Chemistry</h3>
+                <p class="website-url">khanacademy.org</p>
+                <div class="website-rating">
+                  <div class="stars" aria-label="تقييم 4.9 من 5 نجوم">
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                  </div>
+                  <span class="rating-text">4.9</span>
+                </div>
+              </div>
+              <div class="website-badges">
+                <span class="badge free">مجاني</span>
+                <span class="badge popular">شائع</span>
+              </div>
+            </div>
+            <div class="website-content">
+              <p class="website-description">
+                منصة تعليمية مجانية تقدم دروس شاملة في الكيمياء للمرحلة الثانوية والجامعية مع فيديوهات تفاعلية وتمارين عملية.
+              </p>
+              <div class="website-features">
+                <span class="feature">📹 فيديوهات تعليمية</span>
+                <span class="feature">📝 تمارين تفاعلية</span>
+                <span class="feature">📊 تتبع التقدم</span>
+                <span class="feature">🌐 متعدد اللغات</span>
+              </div>
+              <div class="website-meta">
+                <span class="meta-item">الفئة: دورات تدريبية</span>
+                <span class="meta-item">المستوى: المرحلة الثانوية</span>
+                <span class="meta-item">اللغة: الإنجليزية</span>
+              </div>
+            </div>
+            <div class="website-actions">
+              <a href="https://www.khanacademy.org/science/chemistry" target="_blank" class="btn-primary visit-btn">
+                زيارة الموقع
+                <span aria-hidden="true">🔗</span>
+              </a>
+              <button class="btn-secondary bookmark-btn" onclick="bookmarkSite('Khan Academy Chemistry')">
+                إضافة للمفضلة
+                <span aria-hidden="true">⭐</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- مثال بطاقة موقع ثانية -->
+          <article class="website-card"
+                   data-name="ChemSketch"
+                   data-category="tools"
+                   data-level="undergraduate"
+                   data-language="english"
+                   data-type="free"
+                   data-rating="4.5">
+            <div class="website-header">
+              <div class="website-icon">
+                <img src="https://via.placeholder.com/60x60.png?text=CS" alt="ChemSketch" class="site-icon">
+              </div>
+              <div class="website-info">
+                <h3>ChemSketch</h3>
+                <p class="website-url">acdlabs.com</p>
+                <div class="website-rating">
+                  <div class="stars" aria-label="تقييم 4.5 من 5 نجوم">
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star half" aria-hidden="true">★</span>
+                  </div>
+                  <span class="rating-text">4.5</span>
+                </div>
+              </div>
+              <div class="website-badges">
+                <span class="badge free">مجاني</span>
+                <span class="badge tool">أداة</span>
+              </div>
+            </div>
+            <div class="website-content">
+              <p class="website-description">
+                برنامج مجاني لرسم الهياكل الكيميائية والمعادلات مع إمكانيات متقدمة للنمذجة ثلاثية الأبعاد والحسابات الكيميائية.
+              </p>
+              <div class="website-features">
+                <span class="feature">✏️ رسم الهياكل</span>
+                <span class="feature">🧮 حسابات كيميائية</span>
+                <span class="feature">📐 نمذجة ثلاثية الأبعاد</span>
+                <span class="feature">💾 تصدير متعدد الصيغ</span>
+              </div>
+              <div class="website-meta">
+                <span class="meta-item">الفئة: أدوات وحاسبات</span>
+                <span class="meta-item">المستوى: المرحلة الجامعية</span>
+                <span class="meta-item">اللغة: الإنجليزية</span>
+              </div>
+            </div>
+            <div class="website-actions">
+              <a href="https://www.acdlabs.com/resources/freeware/chemsketch/" target="_blank" class="btn-primary visit-btn">
+                زيارة الموقع
+                <span aria-hidden="true">🔗</span>
+              </a>
+              <button class="btn-secondary bookmark-btn" onclick="bookmarkSite('ChemSketch')">
+                إضافة للمفضلة
+                <span aria-hidden="true">⭐</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- مثال بطاقة موقع ثالثة -->
+          <article class="website-card"
+                   data-name="الكيمياء العربية"
+                   data-category="reference"
+                   data-level="undergraduate"
+                   data-language="arabic"
+                   data-type="free"
+                   data-rating="4.7">
+            <div class="website-header">
+              <div class="website-icon">
+                <img src="https://via.placeholder.com/60x60.png?text=كع" alt="الكيمياء العربية" class="site-icon">
+              </div>
+              <div class="website-info">
+                <h3>الكيمياء العربية</h3>
+                <p class="website-url">arabicchemistry.net</p>
+                <div class="website-rating">
+                  <div class="stars" aria-label="تقييم 4.7 من 5 نجوم">
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                  </div>
+                  <span class="rating-text">4.7</span>
+                </div>
+              </div>
+              <div class="website-badges">
+                <span class="badge free">مجاني</span>
+                <span class="badge arabic">عربي</span>
+              </div>
+            </div>
+            <div class="website-content">
+              <p class="website-description">
+                موقع شامل باللغة العربية يقدم مراجع ومصادر كيميائية متنوعة مع شروحات مفصلة وأمثلة تطبيقية للطلاب العرب.
+              </p>
+              <div class="website-features">
+                <span class="feature">📚 مراجع شاملة</span>
+                <span class="feature">🔬 تجارب عملية</span>
+                <span class="feature">📖 شروحات مفصلة</span>
+                <span class="feature">🇸🇦 محتوى عربي</span>
+              </div>
+              <div class="website-meta">
+                <span class="meta-item">الفئة: مراجع ومصادر</span>
+                <span class="meta-item">المستوى: المرحلة الجامعية</span>
+                <span class="meta-item">اللغة: العربية</span>
+              </div>
+            </div>
+            <div class="website-actions">
+              <a href="#" target="_blank" class="btn-primary visit-btn">
+                زيارة الموقع
+                <span aria-hidden="true">🔗</span>
+              </a>
+              <button class="btn-secondary bookmark-btn" onclick="bookmarkSite('الكيمياء العربية')">
+                إضافة للمفضلة
+                <span aria-hidden="true">⭐</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- مثال بطاقة موقع رابعة -->
+          <article class="website-card"
+                   data-name="PhET Interactive Simulations"
+                   data-category="simulation"
+                   data-level="high-school"
+                   data-language="english"
+                   data-type="free"
+                   data-rating="4.8">
+            <div class="website-header">
+              <div class="website-icon">
+                <img src="https://via.placeholder.com/60x60.png?text=PhET" alt="PhET" class="site-icon">
+              </div>
+              <div class="website-info">
+                <h3>PhET Interactive Simulations</h3>
+                <p class="website-url">phet.colorado.edu</p>
+                <div class="website-rating">
+                  <div class="stars" aria-label="تقييم 4.8 من 5 نجوم">
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                    <span class="star filled" aria-hidden="true">★</span>
+                  </div>
+                  <span class="rating-text">4.8</span>
+                </div>
+              </div>
+              <div class="website-badges">
+                <span class="badge free">مجاني</span>
+                <span class="badge interactive">تفاعلي</span>
+              </div>
+            </div>
+            <div class="website-content">
+              <p class="website-description">
+                مجموعة شاملة من المحاكيات التفاعلية للكيمياء والفيزياء من جامعة كولورادو، مثالية للتعلم التفاعلي والاستكشاف.
+              </p>
+              <div class="website-features">
+                <span class="feature">🎮 محاكيات تفاعلية</span>
+                <span class="feature">🔬 تجارب افتراضية</span>
+                <span class="feature">📱 متوافق مع الجوال</span>
+                <span class="feature">🎓 مناسب للتعليم</span>
+              </div>
+              <div class="website-meta">
+                <span class="meta-item">الفئة: محاكاة ومختبرات افتراضية</span>
+                <span class="meta-item">المستوى: المرحلة الثانوية</span>
+                <span class="meta-item">اللغة: الإنجليزية</span>
+              </div>
+            </div>
+            <div class="website-actions">
+              <a href="https://phet.colorado.edu/en/simulations/category/chemistry" target="_blank" class="btn-primary visit-btn">
+                زيارة الموقع
+                <span aria-hidden="true">🔗</span>
+              </a>
+              <button class="btn-secondary bookmark-btn" onclick="bookmarkSite('PhET Interactive Simulations')">
+                إضافة للمفضلة
+                <span aria-hidden="true">⭐</span>
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+          <button class="btn-secondary load-more-btn" id="load-more">تحميل المزيد من المواقع</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" title="العودة للأعلى" aria-label="العودة إلى أعلى الصفحة">↑</button>
+
+  <!-- الفوتر -->
+  <footer class="footer-custom">
+    <p>الرابطة الكيميائية | Chemical Network | © 2025</p>
+    <nav class="footer-nav" aria-label="روابط الفوتر">
+      <a href="index.html">الرئيسية</a> |
+      <a href="index.html#services">الخدمات</a> |
+      <a href="index.html#blog">مدونة</a> |
+      <a href="index.html#contact">تواصل معنا</a>
+    </nav>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('websites-grid');
+      const cards = Array.from(grid.children);
+      const clearBtn = document.getElementById('clear-filters');
+      const searchInput = document.getElementById('search-websites');
+      const sortSelect = document.getElementById('sort-by');
+      const checkboxes = Array.from(document.querySelectorAll('.filter-group input[type="checkbox"]'));
+      const resultsCount = document.getElementById('results-count');
+      const viewBtns = document.querySelectorAll('.view-btn');
+      const loadMoreBtn = document.getElementById('load-more');
+
+      // مسح الفلاتر
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        sortSelect.value = 'name';
+        checkboxes.forEach(cb => cb.checked = false);
+        renderWebsites();
+      });
+
+      // تبديل العرض
+      viewBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          viewBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const view = btn.dataset.view;
+          grid.className = view === 'list' ? 'websites-list' : 'websites-grid';
+        });
+      });
+
+      // كل التغيرات تعيد رسم النتائج
+      [searchInput, sortSelect, ...checkboxes].forEach(el =>
+        el.addEventListener('change', renderWebsites)
+      );
+
+      function renderWebsites() {
+        const searchQ = searchInput.value.trim().toLowerCase();
+        const sortBy = sortSelect.value;
+        const categories = checkboxes.filter(cb => cb.checked && ['general','organic','inorganic','analytical','physical','biochemistry','simulation','tools','courses','reference'].includes(cb.value)).map(cb => cb.value);
+        const levels = checkboxes.filter(cb => cb.checked && ['high-school','undergraduate','graduate','professional'].includes(cb.value)).map(cb => cb.value);
+        const languages = checkboxes.filter(cb => cb.checked && ['arabic','english','french'].includes(cb.value)).map(cb => cb.value);
+        const types = checkboxes.filter(cb => cb.checked && ['free','paid','interactive','video'].includes(cb.value)).map(cb => cb.value);
+
+        let filtered = cards.filter(card => {
+          const name = card.dataset.name.toLowerCase();
+          const category = card.dataset.category;
+          const level = card.dataset.level;
+          const language = card.dataset.language;
+          const type = card.dataset.type;
+          
+          const matchSearch = !searchQ || name.includes(searchQ);
+          const matchCategory = categories.length === 0 || categories.includes(category);
+          const matchLevel = levels.length === 0 || levels.includes(level);
+          const matchLanguage = languages.length === 0 || languages.includes(language);
+          const matchType = types.length === 0 || types.includes(type);
+          
+          return matchSearch && matchCategory && matchLevel && matchLanguage && matchType;
+        });
+
+        // ترتيب
+        if (sortBy === 'name') {
+          filtered.sort((a,b) => a.dataset.name.localeCompare(b.dataset.name,'ar'));
+        } else if (sortBy === 'category') {
+          filtered.sort((a,b) => a.dataset.category.localeCompare(b.dataset.category,'ar'));
+        } else if (sortBy === 'rating') {
+          filtered.sort((a,b) => parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating));
+        }
+
+        // إعادة عرض
+        grid.innerHTML = '';
+        filtered.forEach(card => grid.appendChild(card));
+        
+        // تحديث عدد النتائج
+        resultsCount.textContent = `(${filtered.length} موقع)`;
+      }
+
+      // إضافة للمفضلة
+      window.bookmarkSite = function(siteName) {
+        alert(`تم إضافة ${siteName} إلى المفضلة`);
+        // هنا يمكن إضافة منطق حفظ المفضلة
+      };
+
+      // عرض مبدئي
+      renderWebsites();
+    });
+  </script>
+
+</body>
+</html>
+

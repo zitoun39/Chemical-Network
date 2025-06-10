@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الرابطة الكيميائية | مورّدو الأجهزة والمعدات</title>
+  <meta name="description" content="دليل شامل لمورّدي الأجهزة والمعدات المخبرية في الجزائر وشمال إفريقيا مع خيارات فلترة متقدمة."/>
+  <meta name="keywords" content="مورّدو الأجهزة, معدات مخبرية, أجهزة علمية, مختبر, الجزائر, موردين"/>
+
+  <!-- خط Tajawal -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body id="top">
+
+  <!-- تخطي إلى المحتوى -->
+  <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
+  <!-- شريط التقدّم -->
+  <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- الهيدر -->
+  <header>
+    <nav class="container" role="navigation" aria-label="القائمة الرئيسية">
+      <div class="logo">
+        <a href="index.html">
+          <img src="https://png.pngtree.com/element_pic/00/16/07/115783931601b5c.jpg"
+               alt="شعار الرابطة الكيميائية" class="logo-img"/>
+          <strong id="site-title">الرابطة الكيميائية</strong>
+        </a>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="تبديل القائمة" aria-expanded="false">☰</button>
+      <ul id="nav-list">
+        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+        <li><a href="index.html#services" class="nav-link">الخدمات</a></li>
+        <li><a href="index.html#blog" class="nav-link">مدونة</a></li>
+        <li><a href="index.html#contact" class="nav-link">تواصل معنا</a></li>
+      </ul>
+      <div class="toggles">
+        <button id="lang-toggle" aria-label="تبديل اللغة">EN</button>
+        <input type="checkbox" id="darkSwitch" aria-label="تبديل الوضع الليلي"/>
+        <label for="darkSwitch" title="تبديل الوضع الليلي">🌙</label>
+      </div>
+    </nav>
+  </header>
+
+  <!-- المحتوى الرئيسي -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero suppliers-hero">
+      <h1 id="hero-title">مورّدو الأجهزة والمعدات</h1>
+      <p id="hero-desc">دليل شامل لمورّدي الأجهزة والمعدات المخبرية في الجزائر وشمال إفريقيا مع خيارات فلترة متقدمة</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">35+</span>
+          <span class="stat-label">مورد معتمد</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">150+</span>
+          <span class="stat-label">علامة تجارية</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">20+</span>
+          <span class="stat-label">دولة تغطية</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="مسار التنقل">
+      <ol>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="index.html#services">الخدمات</a></li>
+        <li><span aria-current="page">مورّدو الأجهزة والمعدات</span></li>
+      </ol>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="suppliers-container">
+
+      <!-- Sidebar Filters -->
+      <aside class="filter-sidebar" role="complementary" aria-label="خيارات الفلترة">
+        <div class="filter-header">
+          <h2>فلترة النتائج</h2>
+          <button id="clear-filters" class="btn-secondary" aria-label="مسح جميع الفلاتر">مسح الكلّ</button>
+        </div>
+
+        <div class="filter-group">
+          <label for="search-supplier">بحث عام</label>
+          <input type="text" id="search-supplier" placeholder="ابحث باسم المورد…" aria-label="البحث في أسماء الموردين">
+        </div>
+
+        <div class="filter-group">
+          <label for="sort-by">ترتيب بحسب:</label>
+          <select id="sort-by" aria-label="ترتيب النتائج">
+            <option value="name">الاسم (أ–ي)</option>
+            <option value="type">نوع المورد</option>
+            <option value="coverage">التغطية</option>
+            <option value="rating">التقييم</option>
+          </select>
+        </div>
+
+        <details class="filter-group" open>
+          <summary>نوع المورد</summary>
+          <div class="filter-options" role="group" aria-label="نوع المورد">
+            <label class="filter-option">
+              <input type="checkbox" value="manufacturer" aria-describedby="manufacturer-count">
+              <span class="filter-text">مصنع</span>
+              <span class="filter-count" id="manufacturer-count">(8)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="importer" aria-describedby="importer-count">
+              <span class="filter-text">مستورد</span>
+              <span class="filter-count" id="importer-count">(12)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="distributor" aria-describedby="distributor-count">
+              <span class="filter-text">موزع</span>
+              <span class="filter-count" id="distributor-count">(10)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="agent" aria-describedby="agent-count">
+              <span class="filter-text">ممثل تجاري</span>
+              <span class="filter-count" id="agent-count">(5)</span>
+            </label>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>فئة المعدات</summary>
+          <div class="filter-options" role="group" aria-label="فئة المعدات">
+            <label class="filter-option">
+              <input type="checkbox" value="analytical" aria-describedby="analytical-count">
+              <span class="filter-text">أجهزة تحليلية</span>
+              <span class="filter-count" id="analytical-count">(15)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="general" aria-describedby="general-count">
+              <span class="filter-text">معدات عامة</span>
+              <span class="filter-count" id="general-count">(18)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="specialized" aria-describedby="specialized-count">
+              <span class="filter-text">أجهزة متخصصة</span>
+              <span class="filter-count" id="specialized-count">(8)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="safety" aria-describedby="safety-count">
+              <span class="filter-text">معدات السلامة</span>
+              <span class="filter-count" id="safety-count">(6)</span>
+            </label>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>التغطية الجغرافية</summary>
+          <div class="filter-options" role="group" aria-label="التغطية الجغرافية">
+            <label class="filter-option">
+              <input type="checkbox" value="local" aria-describedby="local-count">
+              <span class="filter-text">محلي</span>
+              <span class="filter-count" id="local-count">(8)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="national" aria-describedby="national-count">
+              <span class="filter-text">وطني</span>
+              <span class="filter-count" id="national-count">(15)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="international" aria-describedby="international-count">
+              <span class="filter-text">دولي</span>
+              <span class="filter-count" id="international-count">(12)</span>
+            </label>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>العلامات التجارية</summary>
+          <div class="brand-search-container">
+            <input type="text" id="brand-search" placeholder="ابحث في العلامات…" aria-label="البحث في العلامات التجارية">
+          </div>
+          <div class="filter-options" role="group" aria-label="العلامات التجارية" id="brand-list">
+            <label class="filter-option">
+              <input type="checkbox" value="thermo-fisher" aria-describedby="thermo-count">
+              <span class="filter-text">Thermo Fisher</span>
+              <span class="filter-count" id="thermo-count">(10)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="agilent" aria-describedby="agilent-count">
+              <span class="filter-text">Agilent</span>
+              <span class="filter-count" id="agilent-count">(8)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="shimadzu" aria-describedby="shimadzu-count">
+              <span class="filter-text">Shimadzu</span>
+              <span class="filter-count" id="shimadzu-count">(6)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="waters" aria-describedby="waters-count">
+              <span class="filter-text">Waters</span>
+              <span class="filter-count" id="waters-count">(5)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="perkinelmer" aria-describedby="perkin-count">
+              <span class="filter-text">PerkinElmer</span>
+              <span class="filter-count" id="perkin-count">(4)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="bruker" aria-describedby="bruker-count">
+              <span class="filter-text">Bruker</span>
+              <span class="filter-count" id="bruker-count">(3)</span>
+            </label>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>الخدمات المتاحة</summary>
+          <div class="filter-options" role="group" aria-label="الخدمات المتاحة">
+            <label class="filter-option">
+              <input type="checkbox" value="installation" aria-describedby="installation-count">
+              <span class="filter-text">تركيب وتشغيل</span>
+              <span class="filter-count" id="installation-count">(20)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="maintenance" aria-describedby="maintenance-count">
+              <span class="filter-text">صيانة دورية</span>
+              <span class="filter-count" id="maintenance-count">(18)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="training" aria-describedby="training-count">
+              <span class="filter-text">تدريب المستخدمين</span>
+              <span class="filter-count" id="training-count">(15)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="calibration" aria-describedby="calibration-count">
+              <span class="filter-text">معايرة الأجهزة</span>
+              <span class="filter-count" id="calibration-count">(12)</span>
+            </label>
+          </div>
+        </details>
+      </aside>
+
+      <!-- Suppliers Grid -->
+      <section class="suppliers-content" role="main" aria-label="قائمة الموردين">
+        <div class="suppliers-header">
+          <h2 class="results-title">النتائج <span id="results-count">(35 مورد)</span></h2>
+          <div class="view-controls">
+            <button class="view-btn active" data-view="grid" aria-label="عرض شبكي" title="عرض شبكي">
+              <span aria-hidden="true">⊞</span>
+            </button>
+            <button class="view-btn" data-view="list" aria-label="عرض قائمة" title="عرض قائمة">
+              <span aria-hidden="true">☰</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="suppliers-grid" id="suppliers-grid">
+          <!-- مثال بطاقة مورد أجهزة -->
+          <article class="supplier-card"
+                   data-name="شركة التقنيات المخبرية المتقدمة"
+                   data-type="distributor"
+                   data-category="analytical"
+                   data-coverage="national"
+                   data-brands="thermo-fisher,agilent"
+                   data-services="installation,maintenance,training"
+                   data-rating="4.7">
+            <div class="supplier-header">
+              <img src="https://via.placeholder.com/200x140.png?text=Advanced+Lab+Tech" alt="شعار شركة التقنيات المخبرية المتقدمة" class="supplier-logo">
+              <div class="supplier-rating">
+                <div class="stars" aria-label="تقييم 4.7 من 5 نجوم">
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                </div>
+                <span class="rating-text">4.7</span>
+              </div>
+            </div>
+            <div class="supplier-body">
+              <h3>شركة التقنيات المخبرية المتقدمة</h3>
+              <div class="supplier-meta">
+                <span class="supplier-type">موزع</span>
+                <span class="supplier-grade">أجهزة تحليلية</span>
+                <span class="supplier-coverage">وطني</span>
+              </div>
+              <div class="supplier-description">
+                <p>موزع معتمد للأجهزة التحليلية المتطورة مع فريق فني متخصص وخدمات ما بعد البيع الشاملة.</p>
+              </div>
+              <div class="supplier-brands">
+                <span class="brand-tag">Thermo Fisher</span>
+                <span class="brand-tag">Agilent</span>
+                <span class="brand-tag">+4 أخرى</span>
+              </div>
+              <div class="supplier-badges">
+                <span class="badge certified">معتمد رسمياً</span>
+                <span class="badge technical-support">دعم فني</span>
+                <span class="badge warranty">ضمان شامل</span>
+              </div>
+              <div class="supplier-services">
+                <span class="service-tag">تركيب وتشغيل</span>
+                <span class="service-tag">صيانة دورية</span>
+                <span class="service-tag">تدريب المستخدمين</span>
+              </div>
+              <div class="supplier-contacts">
+                <a href="mailto:info@advancedlabtech.dz" class="contact-btn" title="البريد الإلكتروني" aria-label="إرسال بريد إلكتروني">
+                  <span aria-hidden="true">✉️</span>
+                </a>
+                <a href="tel:+213123456789" class="contact-btn" title="الهاتف" aria-label="الاتصال بالهاتف">
+                  <span aria-hidden="true">📞</span>
+                </a>
+                <a href="https://advancedlabtech.dz" target="_blank" class="contact-btn" title="الموقع الإلكتروني" aria-label="زيارة الموقع الإلكتروني">
+                  <span aria-hidden="true">🌐</span>
+                </a>
+                <a href="#" class="contact-btn" title="واتساب" aria-label="التواصل عبر واتساب">
+                  <span aria-hidden="true">💬</span>
+                </a>
+              </div>
+              <div class="supplier-actions">
+                <button class="btn-primary" onclick="requestQuote('شركة التقنيات المخبرية المتقدمة')">طلب عرض سعر</button>
+                <div class="supplier-links">
+                  <a href="#" class="link-secondary">كتالوج المنتجات</a>
+                  <a href="#" class="link-secondary">خدمات الصيانة</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- مثال بطاقة مورد ثانية -->
+          <article class="supplier-card"
+                   data-name="مؤسسة الأجهزة العلمية الحديثة"
+                   data-type="importer"
+                   data-category="general"
+                   data-coverage="international"
+                   data-brands="shimadzu,waters"
+                   data-services="installation,maintenance,calibration"
+                   data-rating="4.4">
+            <div class="supplier-header">
+              <img src="https://via.placeholder.com/200x140.png?text=Modern+Scientific" alt="شعار مؤسسة الأجهزة العلمية الحديثة" class="supplier-logo">
+              <div class="supplier-rating">
+                <div class="stars" aria-label="تقييم 4.4 من 5 نجوم">
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star half" aria-hidden="true">★</span>
+                </div>
+                <span class="rating-text">4.4</span>
+              </div>
+            </div>
+            <div class="supplier-body">
+              <h3>مؤسسة الأجهزة العلمية الحديثة</h3>
+              <div class="supplier-meta">
+                <span class="supplier-type">مستورد</span>
+                <span class="supplier-grade">معدات عامة</span>
+                <span class="supplier-coverage">دولي</span>
+              </div>
+              <div class="supplier-description">
+                <p>مستورد رائد للأجهزة العلمية مع شبكة توزيع واسعة وخدمات تقنية متكاملة في جميع أنحاء المنطقة.</p>
+              </div>
+              <div class="supplier-brands">
+                <span class="brand-tag">Shimadzu</span>
+                <span class="brand-tag">Waters</span>
+                <span class="brand-tag">+6 أخرى</span>
+              </div>
+              <div class="supplier-badges">
+                <span class="badge iso-certified">ISO معتمد</span>
+                <span class="badge bulk-supplier">كميات كبيرة</span>
+                <span class="badge fast-delivery">توصيل سريع</span>
+              </div>
+              <div class="supplier-services">
+                <span class="service-tag">تركيب وتشغيل</span>
+                <span class="service-tag">صيانة دورية</span>
+                <span class="service-tag">معايرة الأجهزة</span>
+              </div>
+              <div class="supplier-contacts">
+                <a href="mailto:sales@modernscientific.dz" class="contact-btn" title="البريد الإلكتروني" aria-label="إرسال بريد إلكتروني">
+                  <span aria-hidden="true">✉️</span>
+                </a>
+                <a href="tel:+213987654321" class="contact-btn" title="الهاتف" aria-label="الاتصال بالهاتف">
+                  <span aria-hidden="true">📞</span>
+                </a>
+                <a href="https://modernscientific.dz" target="_blank" class="contact-btn" title="الموقع الإلكتروني" aria-label="زيارة الموقع الإلكتروني">
+                  <span aria-hidden="true">🌐</span>
+                </a>
+                <a href="#" class="contact-btn" title="لينكد إن" aria-label="التواصل عبر لينكد إن">
+                  <span aria-hidden="true">💼</span>
+                </a>
+              </div>
+              <div class="supplier-actions">
+                <button class="btn-primary" onclick="requestQuote('مؤسسة الأجهزة العلمية الحديثة')">طلب عرض سعر</button>
+                <div class="supplier-links">
+                  <a href="#" class="link-secondary">دليل المنتجات</a>
+                  <a href="#" class="link-secondary">خدمات التدريب</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- مثال بطاقة مورد ثالثة -->
+          <article class="supplier-card"
+                   data-name="مختبرات الدقة للأجهزة التحليلية"
+                   data-type="manufacturer"
+                   data-category="specialized"
+                   data-coverage="local"
+                   data-brands="perkinelmer,bruker"
+                   data-services="installation,training,calibration"
+                   data-rating="4.9">
+            <div class="supplier-header">
+              <img src="https://via.placeholder.com/200x140.png?text=Precision+Labs" alt="شعار مختبرات الدقة للأجهزة التحليلية" class="supplier-logo">
+              <div class="supplier-rating">
+                <div class="stars" aria-label="تقييم 4.9 من 5 نجوم">
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                </div>
+                <span class="rating-text">4.9</span>
+              </div>
+            </div>
+            <div class="supplier-body">
+              <h3>مختبرات الدقة للأجهزة التحليلية</h3>
+              <div class="supplier-meta">
+                <span class="supplier-type">مصنع</span>
+                <span class="supplier-grade">أجهزة متخصصة</span>
+                <span class="supplier-coverage">محلي</span>
+              </div>
+              <div class="supplier-description">
+                <p>مصنع متخصص في تجميع وتطوير الأجهزة التحليلية المتقدمة مع خدمات تقنية عالية الجودة.</p>
+              </div>
+              <div class="supplier-brands">
+                <span class="brand-tag">PerkinElmer</span>
+                <span class="brand-tag">Bruker</span>
+                <span class="brand-tag">Precision Brand</span>
+              </div>
+              <div class="supplier-badges">
+                <span class="badge local-made">صنع محلي</span>
+                <span class="badge high-precision">دقة عالية</span>
+                <span class="badge custom-solutions">حلول مخصصة</span>
+              </div>
+              <div class="supplier-services">
+                <span class="service-tag">تركيب وتشغيل</span>
+                <span class="service-tag">تدريب المستخدمين</span>
+                <span class="service-tag">معايرة الأجهزة</span>
+              </div>
+              <div class="supplier-contacts">
+                <a href="mailto:info@precisionlabs.dz" class="contact-btn" title="البريد الإلكتروني" aria-label="إرسال بريد إلكتروني">
+                  <span aria-hidden="true">✉️</span>
+                </a>
+                <a href="tel:+213555123456" class="contact-btn" title="الهاتف" aria-label="الاتصال بالهاتف">
+                  <span aria-hidden="true">📞</span>
+                </a>
+                <a href="https://precisionlabs.dz" target="_blank" class="contact-btn" title="الموقع الإلكتروني" aria-label="زيارة الموقع الإلكتروني">
+                  <span aria-hidden="true">🌐</span>
+                </a>
+              </div>
+              <div class="supplier-actions">
+                <button class="btn-primary" onclick="requestQuote('مختبرات الدقة للأجهزة التحليلية')">طلب عرض سعر</button>
+                <div class="supplier-links">
+                  <a href="#" class="link-secondary">مواصفات تقنية</a>
+                  <a href="#" class="link-secondary">حلول مخصصة</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+          <button class="btn-secondary load-more-btn" id="load-more">تحميل المزيد من النتائج</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" title="العودة للأعلى" aria-label="العودة إلى أعلى الصفحة">↑</button>
+
+  <!-- الفوتر -->
+  <footer class="footer-custom">
+    <p>الرابطة الكيميائية | Chemical Network | © 2025</p>
+    <nav class="footer-nav" aria-label="روابط الفوتر">
+      <a href="index.html">الرئيسية</a> |
+      <a href="index.html#services">الخدمات</a> |
+      <a href="index.html#blog">مدونة</a> |
+      <a href="index.html#contact">تواصل معنا</a>
+    </nav>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('suppliers-grid');
+      const cards = Array.from(grid.children);
+      const clearBtn = document.getElementById('clear-filters');
+      const searchInput = document.getElementById('search-supplier');
+      const sortSelect = document.getElementById('sort-by');
+      const checkboxes = Array.from(document.querySelectorAll('.filter-group input[type="checkbox"]'));
+      const brandSearch = document.getElementById('brand-search');
+      const brandList = document.getElementById('brand-list');
+      const resultsCount = document.getElementById('results-count');
+      const viewBtns = document.querySelectorAll('.view-btn');
+      const loadMoreBtn = document.getElementById('load-more');
+
+      // مسح الفلاتر
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        sortSelect.value = 'name';
+        checkboxes.forEach(cb => cb.checked = false);
+        brandSearch.value = '';
+        filterBrands();
+        renderSuppliers();
+      });
+
+      // فلترة العلامات التجارية
+      brandSearch.addEventListener('input', () => {
+        const q = brandSearch.value.trim().toLowerCase();
+        brandList.querySelectorAll('.filter-option').forEach(option => {
+          const txt = option.textContent.trim().toLowerCase();
+          option.style.display = txt.includes(q) ? 'flex' : 'none';
+        });
+      });
+
+      // تبديل العرض
+      viewBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          viewBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const view = btn.dataset.view;
+          grid.className = view === 'list' ? 'suppliers-list' : 'suppliers-grid';
+        });
+      });
+
+      // كل التغيرات تعيد رسم النتائج
+      [searchInput, sortSelect, ...checkboxes].forEach(el =>
+        el.addEventListener('change', renderSuppliers)
+      );
+
+      function renderSuppliers() {
+        const nameQ = searchInput.value.trim().toLowerCase();
+        const sortBy = sortSelect.value;
+        const types = checkboxes.filter(cb => cb.checked && ['manufacturer','importer','distributor','agent'].includes(cb.value)).map(cb => cb.value);
+        const categories = checkboxes.filter(cb => cb.checked && ['analytical','general','specialized','safety'].includes(cb.value)).map(cb => cb.value);
+        const covers = checkboxes.filter(cb => cb.checked && ['local','national','international'].includes(cb.value)).map(cb => cb.value);
+        const brands = checkboxes.filter(cb => cb.checked && ['thermo-fisher','agilent','shimadzu','waters','perkinelmer','bruker'].includes(cb.value)).map(cb => cb.value);
+        const services = checkboxes.filter(cb => cb.checked && ['installation','maintenance','training','calibration'].includes(cb.value)).map(cb => cb.value);
+
+        let filtered = cards.filter(card => {
+          const nm = card.dataset.name.toLowerCase();
+          const tp = card.dataset.type;
+          const cat = card.dataset.category;
+          const cv = card.dataset.coverage;
+          const brs = card.dataset.brands.split(',');
+          const srvs = card.dataset.services.split(',');
+          const matchName = !nameQ || nm.includes(nameQ);
+          const matchType = types.length === 0 || types.includes(tp);
+          const matchCategory = categories.length === 0 || categories.includes(cat);
+          const matchCov = covers.length === 0 || covers.includes(cv);
+          const matchBrand = brands.length === 0 || brands.some(b => brs.includes(b));
+          const matchService = services.length === 0 || services.some(s => srvs.includes(s));
+          return matchName && matchType && matchCategory && matchCov && matchBrand && matchService;
+        });
+
+        // ترتيب
+        if (sortBy === 'name') {
+          filtered.sort((a,b) => a.dataset.name.localeCompare(b.dataset.name,'ar'));
+        } else if (sortBy === 'type') {
+          filtered.sort((a,b) => a.dataset.type.localeCompare(b.dataset.type,'ar'));
+        } else if (sortBy === 'coverage') {
+          filtered.sort((a,b) => a.dataset.coverage.localeCompare(b.dataset.coverage,'ar'));
+        } else if (sortBy === 'rating') {
+          filtered.sort((a,b) => parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating));
+        }
+
+        // إعادة عرض
+        grid.innerHTML = '';
+        filtered.forEach(card => grid.appendChild(card));
+        
+        // تحديث عدد النتائج
+        resultsCount.textContent = `(${filtered.length} مورد)`;
+      }
+
+      // طلب عرض سعر
+      window.requestQuote = function(supplierName) {
+        alert(`سيتم توجيهك لطلب عرض سعر من ${supplierName}`);
+        // هنا يمكن إضافة منطق طلب عرض السعر
+      };
+
+      // عرض مبدئي
+      renderSuppliers();
+    });
+  </script>
+
+</body>
+</html>
+

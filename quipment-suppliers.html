@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الرابطة الكيميائية | مورّدو الأجهزة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* إعادة استخدام نفس التنسيقات مع تعديلات طفيفة */
+    /* يمكنك نسخ CSS من الصفحة السابقة مع تغيير الفلاتر والعلامات */
+    .supplier-card img { object-fit:contain; } /* لضبط شعار المورد */
+  </style>
+</head>
+<body>
+
+  <header><!-- … الهيدر … --></header>
+
+  <section class="hero" style="padding:2rem 1rem; text-align:center;">
+    <h1 style="font-family:'Tajawal';">مورّدو الأجهزة</h1>
+    <p style="font-family:'Tajawal'; color:#555;">استعرض قائمة مورّدي الأجهزة المخبرية والتقنية مع تفاصيل كاملة وخيارات فلترة.</p>
+  </section>
+
+  <div class="suppliers-container">
+    <aside class="filter-sidebar">
+      <h3>فلترة النتائج</h3>
+      <label for="search-equipment">بحث باسم المورد</label>
+      <input type="text" id="search-equipment" placeholder="ابحث…">
+      <label for="filter-eq-type">نوع المورد</label>
+      <select id="filter-eq-type">
+        <option value="">الكل</option>
+        <option value="factory">مصنع محلي</option>
+        <option value="importer">مستورد</option>
+        <option value="authorized">موزع معتمد</option>
+        <option value="agent">ممثل تجاري</option>
+      </select>
+      <label for="filter-equipment-category">المجالات</label>
+      <select id="filter-equipment-category">
+        <option value="">الكل</option>
+        <option value="analytical">مختبرات تحليلية</option>
+        <option value="physical">معدات فيزيائية</option>
+        <option value="environmental">أدوات بيئية</option>
+        <option value="medical">أجهزة طبية/صناعية</option>
+      </select>
+      <button onclick="renderEquipment()" style="width:100%;padding:0.5rem;background:#1E88E5;color:#fff;border:none;border-radius:4px;cursor:pointer;">تطبيق</button>
+    </aside>
+
+    <section class="suppliers-grid" id="equipment-grid">
+      <!-- مثال بطاقة -->
+      <div class="supplier-card"
+           data-name="مختبرات سارتوريوس"
+           data-type="authorized"
+           data-category="analytical">
+        <img src="https://via.placeholder.com/200x140.png?text=Sartorius" alt="مختبرات سارتوريوس" class="supplier-logo">
+        <div class="supplier-body">
+          <h4>مختبرات سارتوريوس</h4>
+          <div class="meta">موزع معتمد – مختبرات تحليلية</div>
+          <div class="brands">
+            <span>Sartorius</span><span>Metrohm</span>
+          </div>
+          <div class="contacts">
+            <a href="mailto:info@sartorius-dz.com" title="البريد الإلكتروني">✉️</a>
+            <a href="tel:+213987654321" title="الهاتف">📞</a>
+            <a href="#" title="الموقع">🌐</a>
+          </div>
+          <div class="links">
+            <a href="#">كتالوج PDF</a>
+          </div>
+        </div>
+      </div>
+      <!-- أضف المزيد… -->
+    </section>
+  </div>
+
+  <footer><!-- … الفوتر … --></footer>
+
+  <script>
+    // نفس جافاسكربت الفلترة لكن مع مُعرّفات مختلفة
+    const eqGrid = document.getElementById('equipment-grid');
+    const eqCards = Array.from(eqGrid.children);
+    function renderEquipment() {
+      const q = document.getElementById('search-equipment').value.trim().toLowerCase();
+      const t = document.getElementById('filter-eq-type').value;
+      const c = document.getElementById('filter-equipment-category').value;
+      eqCards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const type = card.dataset.type;
+        const cat  = card.dataset.category;
+        const show = (!q || name.includes(q)) &&
+                     (!t || type === t) &&
+                     (!c || cat === c);
+        card.style.display = show ? 'flex' : 'none';
+      });
+    }
+    document.getElementById('search-equipment')
+      .addEventListener('input', renderEquipment);
+  </script>
+</body>
+</html>

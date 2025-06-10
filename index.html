@@ -23,8 +23,7 @@
     <nav class="container" role="navigation" aria-label="القائمة الرئيسية">
       <div class="logo">
         <a href="#top">
-          <img src="https://png.pngtree.com/element_pic/00/16/07/115783931601b5c.jpg"
-               alt="شعار الرابطة الكيميائية" class="logo-img"/>
+         <img src="images/contact-us.jpg" alt="تواصل معنا - فريق الرابطة الكيميائية" class="contact-img"/>
           <strong id="site-title">الرابطة الكيميائية</strong>
         </a>
       </div>
@@ -53,62 +52,112 @@
     </section>
 
     <!-- Services -->
-    <section class="services" id="services">
-      <div class="service-group">
-        <h2>مصادر المعرفة</h2>
-        <div class="cards">
-          <div class="card" data-tooltip="المكتبة الكيميائية">
-            <span>📚</span><a href="#">المكتبة الكيميائية</a>
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading" class="sr-only">الخدمات المتاحة</h2>
+      
+      <div class="service-group" role="region" aria-labelledby="knowledge-heading">
+        <h3 id="knowledge-heading">مصادر المعرفة</h3>
+        <div class="cards" role="list" aria-label="مصادر المعرفة">
+          <div class="card" data-tooltip="المكتبة الكيميائية" data-category="knowledge" role="listitem">
+            <span aria-hidden="true">📚</span>
+            <a href="chemical-library.html" aria-describedby="library-desc">
+              المكتبة الكيميائية
+              <span id="library-desc" class="sr-only">الوصول إلى مجموعة شاملة من الكتب والمراجع الكيميائية</span>
+            </a>
           </div>
-          <div class="card" data-tooltip="مواقع تعليمية">
-            <span>🎓</span><a href="#">مواقع تعليمية</a>
+          <div class="card" data-tooltip="مواقع تعليمية" data-category="knowledge" role="listitem">
+            <span aria-hidden="true">🎓</span>
+            <a href="educational-websites.html" aria-describedby="educational-desc">
+              مواقع تعليمية
+              <span id="educational-desc" class="sr-only">روابط لأفضل المواقع التعليمية في مجال الكيمياء</span>
+            </a>
           </div>
-          <div class="card" data-tooltip="التناضح العكسي">
-            <span>🔄</span><a href="#">التناضح العكسي</a>
-          </div>
-        </div>
-      </div>
-      <div class="service-group">
-        <h2>الاستشارات والأدوات التفاعلية</h2>
-        <div class="cards">
-          <div class="card" data-tooltip="استشارات فنية">
-            <span>💡</span><a href="#">استشارات فنية</a>
-          </div>
-          <div class="card" data-tooltip="الحاسبة العلمية الكيميائية">
-            <span>🧮</span><a href="#">الحاسبة العلمية الكيميائية</a>
-          </div>
-          <div class="card" data-tooltip="الجدول الدوري للعناصر">
-            <span>🧪</span><a href="#">الجدول الدوري للعناصر</a>
-          </div>
-        </div>
-      </div>
-      <div class="service-group">
-        <h2>الموارد والموردون</h2>
-        <div class="cards">
-          <div class="card" data-tooltip="موردي الأجهزة">
-            <span>🔬</span><a href="#">موردي الأجهزة</a>
-          </div>
-          <div class="card" data-tooltip="موردي المواد الكيميائية">
-            <span>⚗️</span><a href="#">موردي المواد الكيميائية</a>
+          <div class="card" data-tooltip="التناضح العكسي" data-category="knowledge" role="listitem">
+            <span aria-hidden="true">🔄</span>
+            <a href="reverse-osmosis.html" aria-describedby="osmosis-desc">
+              التناضح العكسي
+              <span id="osmosis-desc" class="sr-only">معلومات ومراجع حول تقنية التناضح العكسي</span>
+            </a>
           </div>
         </div>
       </div>
-      <div class="service-group">
-        <h2>الخدمات المخبريّة والتحاليل</h2>
-        <div class="cards">
-          <div class="card" data-tooltip="تحاليل فيزيو كيميائية">
-            <span>🔍</span><a href="#">تحاليل فيزيو كيميائية</a>
+      
+      <div class="service-group" role="region" aria-labelledby="tools-heading">
+        <h3 id="tools-heading">الاستشارات والأدوات التفاعلية</h3>
+        <div class="cards" role="list" aria-label="الاستشارات والأدوات التفاعلية">
+          <div class="card" data-tooltip="استشارات فنية" data-category="tools" role="listitem">
+            <span aria-hidden="true">💡</span>
+            <a href="#" aria-describedby="consulting-desc">
+              استشارات فنية
+              <span id="consulting-desc" class="sr-only">خدمات الاستشارات الفنية من خبراء الكيمياء</span>
+            </a>
           </div>
-          <div class="card" data-tooltip="تحاليل بكتريولوجية">
-            <span>🦠</span><a href="#">تحاليل بكتريولوجية</a>
+          <div class="card" data-tooltip="الحاسبة العلمية الكيميائية" data-category="tools" role="listitem">
+            <span aria-hidden="true">🧮</span>
+            <a href="chemistry-calculator.html" aria-describedby="calculator-desc">
+              الحاسبة العلمية الكيميائية
+              <span id="calculator-desc" class="sr-only">أداة حاسبة متخصصة للحسابات الكيميائية</span>
+            </a>
+          </div>
+          <div class="card" data-tooltip="الجدول الدوري للعناصر" data-category="tools" role="listitem">
+            <span aria-hidden="true">🧪</span>
+            <a href="#" aria-describedby="periodic-desc">
+              الجدول الدوري للعناصر
+              <span id="periodic-desc" class="sr-only">جدول دوري تفاعلي للعناصر الكيميائية</span>
+            </a>
           </div>
         </div>
       </div>
-      <div class="service-group">
-        <h2>فرص وظيفية</h2>
-        <div class="cards">
-          <div class="card" data-tooltip="وظائف">
-            <span>💼</span><a href="#">وظائف</a>
+      
+      <div class="service-group" role="region" aria-labelledby="suppliers-heading">
+        <h3 id="suppliers-heading">الموارد والموردون</h3>
+        <div class="cards" role="list" aria-label="الموارد والموردون">
+          <div class="card" data-tooltip="موردي الأجهزة" data-category="suppliers" role="listitem">
+            <span aria-hidden="true">🔬</span>
+            <a href="equipment-suppliers.html" aria-describedby="equipment-desc">
+              موردي الأجهزة
+              <span id="equipment-desc" class="sr-only">دليل موردي الأجهزة والمعدات المخبرية</span>
+            </a>
+          </div>
+          <div class="card" data-tooltip="موردي المواد الكيميائية" data-category="suppliers" role="listitem">
+            <span aria-hidden="true">⚗️</span>
+            <a href="chemical-suppliers.html" aria-describedby="chemicals-desc">
+              موردي المواد الكيميائية
+              <span id="chemicals-desc" class="sr-only">دليل موردي المواد والكيماويات</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="service-group" role="region" aria-labelledby="lab-services-heading">
+        <h3 id="lab-services-heading">الخدمات المخبريّة والتحاليل</h3>
+        <div class="cards" role="list" aria-label="الخدمات المخبريّة والتحاليل">
+          <div class="card" data-tooltip="تحاليل فيزيو كيميائية" data-category="services" role="listitem">
+            <span aria-hidden="true">🔍</span>
+            <a href="#" aria-describedby="physio-desc">
+              تحاليل فيزيو كيميائية
+              <span id="physio-desc" class="sr-only">خدمات التحاليل الفيزيائية والكيميائية</span>
+            </a>
+          </div>
+          <div class="card" data-tooltip="تحاليل بكتريولوجية" data-category="services" role="listitem">
+            <span aria-hidden="true">🦠</span>
+            <a href="#" aria-describedby="bacterio-desc">
+              تحاليل بكتريولوجية
+              <span id="bacterio-desc" class="sr-only">خدمات التحاليل البكتريولوجية والميكروبيولوجية</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="service-group" role="region" aria-labelledby="jobs-heading">
+        <h3 id="jobs-heading">فرص وظيفية</h3>
+        <div class="cards" role="list" aria-label="فرص وظيفية">
+          <div class="card" data-tooltip="وظائف" data-category="jobs" role="listitem">
+            <span aria-hidden="true">💼</span>
+            <a href="#" aria-describedby="jobs-desc">
+              وظائف
+              <span id="jobs-desc" class="sr-only">فرص وظيفية في مجال الكيمياء والمختبرات</span>
+            </a>
           </div>
         </div>
       </div>

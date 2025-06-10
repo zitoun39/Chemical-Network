@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الرابطة الكيميائية | المكتبة الكيميائية</title>
+  <meta name="description" content="مكتبة رقمية شاملة للكتب والمراجع الكيميائية مع إمكانية البحث والتصفح حسب الفئات."/>
+  <meta name="keywords" content="مكتبة كيميائية, كتب كيمياء, مراجع علمية, الجزائر"/>
+
+  <!-- خط Tajawal -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body id="top">
+
+  <!-- تخطي إلى المحتوى -->
+  <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
+  <!-- شريط التقدّم -->
+  <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- الهيدر -->
+  <header>
+    <nav class="container" role="navigation" aria-label="القائمة الرئيسية">
+      <div class="logo">
+        <a href="index.html">
+          <img src="https://png.pngtree.com/element_pic/00/16/07/115783931601b5c.jpg"
+               alt="شعار الرابطة الكيميائية" class="logo-img"/>
+          <strong id="site-title">الرابطة الكيميائية</strong>
+        </a>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="تبديل القائمة" aria-expanded="false">☰</button>
+      <ul id="nav-list">
+        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+        <li><a href="index.html#services" class="nav-link">الخدمات</a></li>
+        <li><a href="index.html#blog" class="nav-link">مدونة</a></li>
+        <li><a href="index.html#contact" class="nav-link">تواصل معنا</a></li>
+      </ul>
+      <div class="toggles">
+        <button id="lang-toggle" aria-label="تبديل اللغة">EN</button>
+        <input type="checkbox" id="darkSwitch" aria-label="تبديل الوضع الليلي"/>
+        <label for="darkSwitch" title="تبديل الوضع الليلي">🌙</label>
+      </div>
+    </nav>
+  </header>
+
+  <!-- المحتوى الرئيسي -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero library-hero">
+      <h1 id="hero-title">المكتبة الكيميائية</h1>
+      <p id="hero-desc">مكتبة رقمية شاملة للكتب والمراجع الكيميائية مع إمكانية البحث والتصفح حسب الفئات</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">كتاب ومرجع</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">25+</span>
+          <span class="stat-label">فئة متخصصة</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">لغة متاحة</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="مسار التنقل">
+      <ol>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="index.html#services">الخدمات</a></li>
+        <li><span aria-current="page">المكتبة الكيميائية</span></li>
+      </ol>
+    </nav>
+
+    <!-- Library Container -->
+    <div class="library-container">
+
+      <!-- Sidebar Filters -->
+      <aside class="filter-sidebar" role="complementary" aria-label="خيارات الفلترة">
+        <div class="filter-header">
+          <h2>فلترة المحتوى</h2>
+          <button id="clear-filters" class="btn-secondary" aria-label="مسح جميع الفلاتر">مسح الكلّ</button>
+        </div>
+
+        <div class="filter-group">
+          <label for="search-library">البحث في المكتبة</label>
+          <input type="text" id="search-library" placeholder="ابحث في العناوين والمؤلفين..." aria-label="البحث في المكتبة">
+        </div>
+
+        <div class="filter-group">
+          <label for="sort-by">ترتيب بحسب:</label>
+          <select id="sort-by" aria-label="ترتيب النتائج">
+            <option value="title">العنوان (أ–ي)</option>
+            <option value="author">المؤلف</option>
+            <option value="year">سنة النشر</option>
+            <option value="rating">التقييم</option>
+            <option value="downloads">الأكثر تحميلاً</option>
+          </select>
+        </div>
+
+        <details class="filter-group" open>
+          <summary>الفئات الرئيسية</summary>
+          <div class="filter-options" role="group" aria-label="الفئات الرئيسية">
+            <label class="filter-option">
+              <input type="checkbox" value="general" aria-describedby="general-count">
+              <span class="filter-text">كيمياء عامة</span>
+              <span class="filter-count" id="general-count">(85)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="organic" aria-describedby="organic-count">
+              <span class="filter-text">كيمياء عضوية</span>
+              <span class="filter-count" id="organic-count">(72)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="inorganic" aria-describedby="inorganic-count">
+              <span class="filter-text">كيمياء غير عضوية</span>
+              <span class="filter-count" id="inorganic-count">(68)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="analytical" aria-describedby="analytical-count">
+              <span class="filter-text">كيمياء تحليلية</span>
+              <span class="filter-count" id="analytical-count">(54)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="physical" aria-describedby="physical-count">
+              <span class="filter-text">كيمياء فيزيائية</span>
+              <span class="filter-count" id="physical-count">(48)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="biochemistry" aria-describedby="biochemistry-count">
+              <span class="filter-text">كيمياء حيوية</span>
+              <span class="filter-count" id="biochemistry-count">(42)</span>
+            </label>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>مستوى التعليم</summary>
+          <div class="filter-options" role="group" aria-label="مستوى التعليم">
+            <label class="filter-option">
+              <input type="checkbox" value="undergraduate" aria-describedby="undergraduate-count">
+              <span class="filter-text">المرحلة الجامعية</span>
+              <span class="filter-count" id="undergraduate-count">(180)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="graduate" aria-describedby="graduate-count">
+              <span class="filter-text">الدراسات العليا</span>
+              <span class="filter-count" id="graduate-count">(120)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="research" aria-describedby="research-count">
+              <span class="filter-text">البحث العلمي</span>
+              <span class="filter-count" id="research-count">(95)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="professional" aria-describedby="professional-count">
+              <span class="filter-text">المهنيين</span>
+              <span class="filter-count" id="professional-count">(105)</span>
+            </label>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>اللغة</summary>
+          <div class="filter-options" role="group" aria-label="اللغة">
+            <label class="filter-option">
+              <input type="checkbox" value="arabic" aria-describedby="arabic-count">
+              <span class="filter-text">العربية</span>
+              <span class="filter-count" id="arabic-count">(125)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="english" aria-describedby="english-count">
+              <span class="filter-text">الإنجليزية</span>
+              <span class="filter-count" id="english-count">(285)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="french" aria-describedby="french-count">
+              <span class="filter-text">الفرنسية</span>
+              <span class="filter-count" id="french-count">(90)</span>
+            </label>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>نوع المحتوى</summary>
+          <div class="filter-options" role="group" aria-label="نوع المحتوى">
+            <label class="filter-option">
+              <input type="checkbox" value="textbook" aria-describedby="textbook-count">
+              <span class="filter-text">كتب دراسية</span>
+              <span class="filter-count" id="textbook-count">(220)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="reference" aria-describedby="reference-count">
+              <span class="filter-text">مراجع علمية</span>
+              <span class="filter-count" id="reference-count">(150)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="handbook" aria-describedby="handbook-count">
+              <span class="filter-text">أدلة عملية</span>
+              <span class="filter-count" id="handbook-count">(80)</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" value="journal" aria-describedby="journal-count">
+              <span class="filter-text">مجلات علمية</span>
+              <span class="filter-count" id="journal-count">(50)</span>
+            </label>
+          </div>
+        </details>
+      </aside>
+
+      <!-- Library Content -->
+      <section class="library-content" role="main" aria-label="محتوى المكتبة">
+        <div class="library-header">
+          <h2 class="results-title">النتائج <span id="results-count">(500 مرجع)</span></h2>
+          <div class="view-controls">
+            <button class="view-btn active" data-view="grid" aria-label="عرض شبكي" title="عرض شبكي">
+              <span aria-hidden="true">⊞</span>
+            </button>
+            <button class="view-btn" data-view="list" aria-label="عرض قائمة" title="عرض قائمة">
+              <span aria-hidden="true">☰</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="library-grid" id="library-grid">
+          <!-- مثال بطاقة كتاب -->
+          <article class="book-card"
+                   data-title="أسس الكيمياء العامة"
+                   data-author="د. أحمد محمد علي"
+                   data-category="general"
+                   data-level="undergraduate"
+                   data-language="arabic"
+                   data-type="textbook"
+                   data-year="2023"
+                   data-rating="4.8">
+            <div class="book-cover">
+              <img src="https://via.placeholder.com/200x280.png?text=أسس+الكيمياء+العامة" alt="غلاف كتاب أسس الكيمياء العامة" class="cover-image">
+              <div class="book-rating">
+                <div class="stars" aria-label="تقييم 4.8 من 5 نجوم">
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                </div>
+                <span class="rating-text">4.8</span>
+              </div>
+              <div class="book-overlay">
+                <button class="btn-primary preview-btn" onclick="previewBook('أسس الكيمياء العامة')">معاينة</button>
+                <button class="btn-secondary download-btn" onclick="downloadBook('أسس الكيمياء العامة')">تحميل</button>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>أسس الكيمياء العامة</h3>
+              <p class="book-author">د. أحمد محمد علي</p>
+              <div class="book-meta">
+                <span class="book-category">كيمياء عامة</span>
+                <span class="book-year">2023</span>
+                <span class="book-language">العربية</span>
+              </div>
+              <div class="book-badges">
+                <span class="badge new">جديد</span>
+                <span class="badge popular">الأكثر تحميلاً</span>
+              </div>
+              <p class="book-description">
+                كتاب شامل يغطي أساسيات الكيمياء العامة للطلاب الجامعيين مع أمثلة تطبيقية وتمارين محلولة.
+              </p>
+              <div class="book-stats">
+                <span class="stat">📥 1,250 تحميل</span>
+                <span class="stat">📄 450 صفحة</span>
+                <span class="stat">💾 15.2 MB</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- مثال بطاقة كتاب ثانية -->
+          <article class="book-card"
+                   data-title="Organic Chemistry Principles"
+                   data-author="Dr. Sarah Johnson"
+                   data-category="organic"
+                   data-level="graduate"
+                   data-language="english"
+                   data-type="textbook"
+                   data-year="2022"
+                   data-rating="4.6">
+            <div class="book-cover">
+              <img src="https://via.placeholder.com/200x280.png?text=Organic+Chemistry" alt="غلاف كتاب Organic Chemistry Principles" class="cover-image">
+              <div class="book-rating">
+                <div class="stars" aria-label="تقييم 4.6 من 5 نجوم">
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star half" aria-hidden="true">★</span>
+                </div>
+                <span class="rating-text">4.6</span>
+              </div>
+              <div class="book-overlay">
+                <button class="btn-primary preview-btn" onclick="previewBook('Organic Chemistry Principles')">معاينة</button>
+                <button class="btn-secondary download-btn" onclick="downloadBook('Organic Chemistry Principles')">تحميل</button>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Organic Chemistry Principles</h3>
+              <p class="book-author">Dr. Sarah Johnson</p>
+              <div class="book-meta">
+                <span class="book-category">كيمياء عضوية</span>
+                <span class="book-year">2022</span>
+                <span class="book-language">الإنجليزية</span>
+              </div>
+              <div class="book-badges">
+                <span class="badge recommended">موصى به</span>
+                <span class="badge advanced">متقدم</span>
+              </div>
+              <p class="book-description">
+                دليل شامل لمبادئ الكيمياء العضوية المتقدمة مع التركيز على الآليات والتطبيقات الحديثة.
+              </p>
+              <div class="book-stats">
+                <span class="stat">📥 890 تحميل</span>
+                <span class="stat">📄 680 صفحة</span>
+                <span class="stat">💾 22.8 MB</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- مثال بطاقة كتاب ثالثة -->
+          <article class="book-card"
+                   data-title="التحليل الكيميائي الآلي"
+                   data-author="د. فاطمة الزهراء"
+                   data-category="analytical"
+                   data-level="professional"
+                   data-language="arabic"
+                   data-type="reference"
+                   data-year="2023"
+                   data-rating="4.9">
+            <div class="book-cover">
+              <img src="https://via.placeholder.com/200x280.png?text=التحليل+الكيميائي" alt="غلاف كتاب التحليل الكيميائي الآلي" class="cover-image">
+              <div class="book-rating">
+                <div class="stars" aria-label="تقييم 4.9 من 5 نجوم">
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                </div>
+                <span class="rating-text">4.9</span>
+              </div>
+              <div class="book-overlay">
+                <button class="btn-primary preview-btn" onclick="previewBook('التحليل الكيميائي الآلي')">معاينة</button>
+                <button class="btn-secondary download-btn" onclick="downloadBook('التحليل الكيميائي الآلي')">تحميل</button>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>التحليل الكيميائي الآلي</h3>
+              <p class="book-author">د. فاطمة الزهراء</p>
+              <div class="book-meta">
+                <span class="book-category">كيمياء تحليلية</span>
+                <span class="book-year">2023</span>
+                <span class="book-language">العربية</span>
+              </div>
+              <div class="book-badges">
+                <span class="badge expert">للخبراء</span>
+                <span class="badge updated">محدث</span>
+              </div>
+              <p class="book-description">
+                مرجع متخصص في تقنيات التحليل الكيميائي الآلي الحديثة مع التطبيقات العملية في المختبرات.
+              </p>
+              <div class="book-stats">
+                <span class="stat">📥 2,100 تحميل</span>
+                <span class="stat">📄 520 صفحة</span>
+                <span class="stat">💾 18.5 MB</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- مثال بطاقة كتاب رابعة -->
+          <article class="book-card"
+                   data-title="Chimie Physique Moderne"
+                   data-author="Prof. Jean Dubois"
+                   data-category="physical"
+                   data-level="research"
+                   data-language="french"
+                   data-type="reference"
+                   data-year="2021"
+                   data-rating="4.4">
+            <div class="book-cover">
+              <img src="https://via.placeholder.com/200x280.png?text=Chimie+Physique" alt="غلاف كتاب Chimie Physique Moderne" class="cover-image">
+              <div class="book-rating">
+                <div class="stars" aria-label="تقييم 4.4 من 5 نجوم">
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star filled" aria-hidden="true">★</span>
+                  <span class="star empty" aria-hidden="true">★</span>
+                </div>
+                <span class="rating-text">4.4</span>
+              </div>
+              <div class="book-overlay">
+                <button class="btn-primary preview-btn" onclick="previewBook('Chimie Physique Moderne')">معاينة</button>
+                <button class="btn-secondary download-btn" onclick="downloadBook('Chimie Physique Moderne')">تحميل</button>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Chimie Physique Moderne</h3>
+              <p class="book-author">Prof. Jean Dubois</p>
+              <div class="book-meta">
+                <span class="book-category">كيمياء فيزيائية</span>
+                <span class="book-year">2021</span>
+                <span class="book-language">الفرنسية</span>
+              </div>
+              <div class="book-badges">
+                <span class="badge research">بحثي</span>
+                <span class="badge international">دولي</span>
+              </div>
+              <p class="book-description">
+                مرجع متقدم في الكيمياء الفيزيائية الحديثة مع التركيز على النظريات الجديدة والتطبيقات المتطورة.
+              </p>
+              <div class="book-stats">
+                <span class="stat">📥 650 تحميل</span>
+                <span class="stat">📄 780 صفحة</span>
+                <span class="stat">💾 28.3 MB</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+          <button class="btn-secondary load-more-btn" id="load-more">تحميل المزيد من النتائج</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" title="العودة للأعلى" aria-label="العودة إلى أعلى الصفحة">↑</button>
+
+  <!-- الفوتر -->
+  <footer class="footer-custom">
+    <p>الرابطة الكيميائية | Chemical Network | © 2025</p>
+    <nav class="footer-nav" aria-label="روابط الفوتر">
+      <a href="index.html">الرئيسية</a> |
+      <a href="index.html#services">الخدمات</a> |
+      <a href="index.html#blog">مدونة</a> |
+      <a href="index.html#contact">تواصل معنا</a>
+    </nav>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('library-grid');
+      const cards = Array.from(grid.children);
+      const clearBtn = document.getElementById('clear-filters');
+      const searchInput = document.getElementById('search-library');
+      const sortSelect = document.getElementById('sort-by');
+      const checkboxes = Array.from(document.querySelectorAll('.filter-group input[type="checkbox"]'));
+      const resultsCount = document.getElementById('results-count');
+      const viewBtns = document.querySelectorAll('.view-btn');
+      const loadMoreBtn = document.getElementById('load-more');
+
+      // مسح الفلاتر
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        sortSelect.value = 'title';
+        checkboxes.forEach(cb => cb.checked = false);
+        renderBooks();
+      });
+
+      // تبديل العرض
+      viewBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          viewBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const view = btn.dataset.view;
+          grid.className = view === 'list' ? 'library-list' : 'library-grid';
+        });
+      });
+
+      // كل التغيرات تعيد رسم النتائج
+      [searchInput, sortSelect, ...checkboxes].forEach(el =>
+        el.addEventListener('change', renderBooks)
+      );
+
+      function renderBooks() {
+        const searchQ = searchInput.value.trim().toLowerCase();
+        const sortBy = sortSelect.value;
+        const categories = checkboxes.filter(cb => cb.checked && ['general','organic','inorganic','analytical','physical','biochemistry'].includes(cb.value)).map(cb => cb.value);
+        const levels = checkboxes.filter(cb => cb.checked && ['undergraduate','graduate','research','professional'].includes(cb.value)).map(cb => cb.value);
+        const languages = checkboxes.filter(cb => cb.checked && ['arabic','english','french'].includes(cb.value)).map(cb => cb.value);
+        const types = checkboxes.filter(cb => cb.checked && ['textbook','reference','handbook','journal'].includes(cb.value)).map(cb => cb.value);
+
+        let filtered = cards.filter(card => {
+          const title = card.dataset.title.toLowerCase();
+          const author = card.dataset.author.toLowerCase();
+          const category = card.dataset.category;
+          const level = card.dataset.level;
+          const language = card.dataset.language;
+          const type = card.dataset.type;
+          
+          const matchSearch = !searchQ || title.includes(searchQ) || author.includes(searchQ);
+          const matchCategory = categories.length === 0 || categories.includes(category);
+          const matchLevel = levels.length === 0 || levels.includes(level);
+          const matchLanguage = languages.length === 0 || languages.includes(language);
+          const matchType = types.length === 0 || types.includes(type);
+          
+          return matchSearch && matchCategory && matchLevel && matchLanguage && matchType;
+        });
+
+        // ترتيب
+        if (sortBy === 'title') {
+          filtered.sort((a,b) => a.dataset.title.localeCompare(b.dataset.title,'ar'));
+        } else if (sortBy === 'author') {
+          filtered.sort((a,b) => a.dataset.author.localeCompare(b.dataset.author,'ar'));
+        } else if (sortBy === 'year') {
+          filtered.sort((a,b) => parseInt(b.dataset.year) - parseInt(a.dataset.year));
+        } else if (sortBy === 'rating') {
+          filtered.sort((a,b) => parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating));
+        }
+
+        // إعادة عرض
+        grid.innerHTML = '';
+        filtered.forEach(card => grid.appendChild(card));
+        
+        // تحديث عدد النتائج
+        resultsCount.textContent = `(${filtered.length} مرجع)`;
+      }
+
+      // معاينة الكتاب
+      window.previewBook = function(bookTitle) {
+        alert(`سيتم فتح معاينة للكتاب: ${bookTitle}`);
+        // هنا يمكن إضافة منطق المعاينة
+      };
+
+      // تحميل الكتاب
+      window.downloadBook = function(bookTitle) {
+        alert(`سيتم تحميل الكتاب: ${bookTitle}`);
+        // هنا يمكن إضافة منطق التحميل
+      };
+
+      // عرض مبدئي
+      renderBooks();
+    });
+  </script>
+
+</body>
+</html>
+

@@ -1,61 +1,188 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>الرابطة الكيميائية | المكتبة الكيميائية</title>
-  <meta name="description" content="الرابطة الكيميائية – تصفح مكتبتنا العلمية الغنية بالمراجع والدروس.">
-  <meta name="keywords" content="مكتبة, كتب, دروس, مراجع">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* إضافات خاصة بالمكتبة */
+    .library-hero {
+      background: url('https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg') center/cover no-repeat;
+      position: relative; color: #fff; text-align: center;
+      padding: 6rem 1rem;
+    }
+    .library-hero::after {
+      content: ''; position: absolute; inset:0;
+      background: rgba(0,0,0,0.5);
+    }
+    .library-hero .container {
+      position: relative; z-index:1;
+    }
+    .library-hero h1 { font-size:2.5rem; margin-bottom:0.5rem; }
+    .library-hero p { font-size:1.1rem; opacity:0.9; }
 
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    .library-controls {
+      max-width: 900px; margin: 2rem auto; display: flex;
+      gap:1rem; flex-wrap:wrap; align-items:center;
+      justify-content: space-between;
+      padding: 0 1rem;
+    }
+    .library-controls input,
+    .library-controls select {
+      padding:0.75rem; border:1px solid #ccc; border-radius:4px;
+      width: 100%; max-width:300px; font-family:'Tajawal',sans-serif;
+    }
+    .library-grid {
+      display:grid; gap:1.5rem;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      max-width:1200px; margin:1rem auto; padding:0 1rem;
+    }
+    .book-card {
+      background:#fff; border-radius:8px; overflow:hidden;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      display:flex; flex-direction:column;
+      transition:transform .2s, box-shadow .2s;
+    }
+    body.dark .book-card { background:#1e1e1e; }
+    .book-card:hover {
+      transform:translateY(-4px);
+      box-shadow:0 4px 16px rgba(0,0,0,0.2);
+    }
+    .book-card img {
+      width:100%; height:140px; object-fit:cover;
+    }
+    .book-info {
+      padding:1rem; flex:1; display:flex; flex-direction:column;
+    }
+    .book-info h3 {
+      font-size:1.1rem; margin-bottom:0.5rem;
+      flex:1; color:var(--dark);
+    }
+    body.dark .book-info h3 { color:#e0e0e0; }
+    .book-info span {
+      font-size:0.85rem; color:#666; margin-bottom:0.75rem;
+    }
+    .book-info a {
+      align-self:flex-start; text-decoration:none;
+      background:var(--primary); color:#fff;
+      padding:0.5rem 1rem; border-radius:4px;
+      transition:background .2s;
+    }
+    .book-info a:hover { background:var(--secondary); }
+
+    .pagination {
+      display:flex; gap:0.5rem; justify-content:center;
+      margin:2rem 0;
+    }
+    .pagination button {
+      padding:0.5rem 0.75rem; border:1px solid #ccc;
+      background:#fff; cursor:pointer; border-radius:4px;
+      transition:background .2s;
+    }
+    .pagination button.active,
+    .pagination button:hover {
+      background:var(--primary); color:#fff; border-color:var(--primary);
+    }
+  </style>
 </head>
-<body id="top">
-  <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
-  <div id="progress-bar"></div>
-  <header>
-    <nav class="container" aria-label="القائمة الرئيسية">
-      <div class="logo">
-        <a href="index.html">
-          <img src="https://png.pngtree.com/element_pic/00/16/07/115783931601b5c.jpg"
-               alt="شعار الرابطة الكيميائية" class="logo-img">
-          <strong>الرابطة الكيميائية</strong>
-        </a>
+<body>
+
+  <!-- Header (استدعاء مشترك) -->
+  <header><!-- … نفس الهيدر … --></header>
+
+  <!-- Hero Banner -->
+  <section class="library-hero">
+    <div class="container">
+      <h1>المكتبة الكيميائية</h1>
+      <p>اكتشف الكتب، المقالات، والدروس التفاعلية في مختلف فروع الكيمياء.</p>
+    </div>
+  </section>
+
+  <!-- Search & Filter Controls -->
+  <div class="library-controls">
+    <input type="text" id="search-input" placeholder="ابحث في المكتبة…" aria-label="بحث"/>
+    <select id="type-filter" aria-label="تصفية حسب النوع">
+      <option value="">كل الأنواع</option>
+      <option value="book">كتاب</option>
+      <option value="article">مقال</option>
+      <option value="video">فيديو</option>
+      <option value="pdf">PDF</option>
+    </select>
+  </div>
+
+  <!-- Grid of Resources -->
+  <section class="library-grid" id="library-grid">
+    <!-- مثال بطاقة -->
+    <div class="book-card" data-type="book" data-title="مقدمة في الكيمياء العضوية">
+      <img src="https://via.placeholder.com/300x140.png?text=Organic+Chem" alt="مقدمة في الكيمياء العضوية">
+      <div class="book-info">
+        <h3>مقدمة في الكيمياء العضوية</h3>
+        <span>كتاب</span>
+        <a href="#">اقرأ الآن</a>
       </div>
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="تبديل القائمة" aria-expanded="false">☰</button>
-      <ul id="nav-list">
-        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
-        <li><a href="services.html" class="nav-link">الخدمات</a></li>
-        <li><a href="library.html" class="nav-link active">المكتبة الكيميائية</a></li>
-        <li><a href="blog.html" class="nav-link">مدونة</a></li>
-        <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
-      </ul>
-      <div class="toggles">
-        <button id="lang-toggle">EN</button>
-        <input type="checkbox" id="darkSwitch"><label for="darkSwitch">🌙</label>
+    </div>
+    <div class="book-card" data-type="article" data-title="خواص الماء الكيميائية">
+      <img src="https://via.placeholder.com/300x140.png?text=Water+Properties" alt="خواص الماء الكيميائية">
+      <div class="book-info">
+        <h3>خواص الماء الكيميائية</h3>
+        <span>مقال</span>
+        <a href="#">اقرأ الآن</a>
       </div>
-    </nav>
-  </header>
+    </div>
+    <!-- أضف المزيد من البطاقات هنا… -->
+  </section>
 
-  <main id="main-content">
-    <section id="library" class="services">
-      <h2>المكتبة الكيميائية</h2>
-      <p>هنا تجد مراجع قيمة وكتب ودروس في شتى فروع الكيمياء.</p>
-      <!-- أضف محتوى المكتبة كما تريد -->
-    </section>
-  </main>
+  <!-- Pagination -->
+  <div class="pagination" id="pagination"></div>
 
-  <footer class="footer-custom">
-    <p>الرابطة الكيميائية | Chemical Network | © 2025</p>
-    <nav class="footer-nav" aria-label="روابط الفوتر">
-      <a href="index.html">الرئيسية</a> |
-      <a href="services.html">الخدمات</a> |
-      <a href="library.html">المكتبة الكيميائية</a> |
-      <a href="blog.html">مدونة</a> |
-      <a href="contact.html">تواصل معنا</a>
-    </nav>
-  </footer>
+  <!-- Footer (استدعاء مشترك) -->
+  <footer><!-- … نفس الفوتر … --></footer>
 
-  <script src="script.js"></script>
+  <!-- Script -->
+  <script>
+    // بسيط: بحث + فلتر + تصفّح الصفحات
+    const grid = document.getElementById('library-grid');
+    const cards = Array.from(grid.children);
+    const searchInput = document.getElementById('search-input');
+    const filterSelect = document.getElementById('type-filter');
+    const pagination = document.getElementById('pagination');
+    const itemsPerPage = 6;
+    let currentPage = 1;
+
+    function render() {
+      const query = searchInput.value.trim().toLowerCase();
+      const type = filterSelect.value;
+      let filtered = cards.filter(card => {
+        const title = card.dataset.title.toLowerCase();
+        const matchesSearch = !query || title.includes(query);
+        const matchesType = !type || card.dataset.type === type;
+        return matchesSearch && matchesType;
+      });
+      // pagination
+      const totalPages = Math.ceil(filtered.length / itemsPerPage) || 1;
+      if (currentPage > totalPages) currentPage = totalPages;
+      const start = (currentPage - 1) * itemsPerPage;
+      const pageItems = filtered.slice(start, start + itemsPerPage);
+      // إظهار/إخفاء
+      cards.forEach(c => c.style.display = 'none');
+      pageItems.forEach(c => c.style.display = 'flex');
+      // بنية أزرار الصفحات
+      pagination.innerHTML = '';
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        if (i === currentPage) btn.classList.add('active');
+        btn.addEventListener('click', () => { currentPage = i; render(); });
+        pagination.append(btn);
+      }
+    }
+
+    searchInput.addEventListener('input', () => { currentPage = 1; render(); });
+    filterSelect.addEventListener('change', () => { currentPage = 1; render(); });
+    // أول تشغيل
+    render();
+  </script>
 </body>
 </html>

@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الرابطة الكيميائية | الحاسبة الكيميائية العلمية</title>
+  <meta name="description" content="حاسبة كيميائية شاملة تتضمن حسابات الكتلة المولية، تخفيف المحاليل، الأس الهيدروجيني، والمزيد من الحسابات الكيميائية."/>
+  <meta name="keywords" content="حاسبة كيميائية, كتلة مولية, تخفيف محاليل, pH, الجزائر"/>
+
+  <!-- خط Tajawal -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body id="top">
+
+  <!-- تخطي إلى المحتوى -->
+  <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
+  <!-- شريط التقدّم -->
+  <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- الهيدر -->
+  <header>
+    <nav class="container" role="navigation" aria-label="القائمة الرئيسية">
+      <div class="logo">
+        <a href="index.html">
+          <img src="https://png.pngtree.com/element_pic/00/16/07/115783931601b5c.jpg"
+               alt="شعار الرابطة الكيميائية" class="logo-img"/>
+          <strong id="site-title">الرابطة الكيميائية</strong>
+        </a>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="تبديل القائمة" aria-expanded="false">☰</button>
+      <ul id="nav-list">
+        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+        <li><a href="index.html#services" class="nav-link">الخدمات</a></li>
+        <li><a href="index.html#blog" class="nav-link">مدونة</a></li>
+        <li><a href="index.html#contact" class="nav-link">تواصل معنا</a></li>
+      </ul>
+      <div class="toggles">
+        <button id="lang-toggle" aria-label="تبديل اللغة">EN</button>
+        <input type="checkbox" id="darkSwitch" aria-label="تبديل الوضع الليلي"/>
+        <label for="darkSwitch" title="تبديل الوضع الليلي">🌙</label>
+      </div>
+    </nav>
+  </header>
+
+  <!-- المحتوى الرئيسي -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero calculator-hero">
+      <h1 id="hero-title">الحاسبة الكيميائية العلمية</h1>
+      <p id="hero-desc">حاسبة كيميائية شاملة تتضمن حسابات الكتلة المولية، تخفيف المحاليل، الأس الهيدروجيني، والمزيد من الحسابات الكيميائية</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">نوع حساب</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">دقة النتائج</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">متاح دائماً</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="مسار التنقل">
+      <ol>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="index.html#services">الخدمات</a></li>
+        <li><span aria-current="page">الحاسبة الكيميائية العلمية</span></li>
+      </ol>
+    </nav>
+
+    <!-- Calculator Container -->
+    <div class="calculator-main-container">
+
+      <!-- Calculator Navigation -->
+      <aside class="calc-sidebar" role="complementary" aria-label="قائمة الحاسبات">
+        <div class="sidebar-header">
+          <h2>أنواع الحاسبات</h2>
+        </div>
+        <nav class="calc-nav">
+          <ul>
+            <li><a href="#molar-mass" class="calc-nav-item active" data-calc="molar-mass">الكتلة المولية</a></li>
+            <li><a href="#dilution" class="calc-nav-item" data-calc="dilution">تخفيف المحاليل</a></li>
+            <li><a href="#ph-calculator" class="calc-nav-item" data-calc="ph-calculator">حساب الأس الهيدروجيني</a></li>
+            <li><a href="#molarity" class="calc-nav-item" data-calc="molarity">التركيز المولاري</a></li>
+            <li><a href="#gas-laws" class="calc-nav-item" data-calc="gas-laws">قوانين الغازات</a></li>
+            <li><a href="#stoichiometry" class="calc-nav-item" data-calc="stoichiometry">الحسابات الكيميائية</a></li>
+            <li><a href="#equilibrium" class="calc-nav-item" data-calc="equilibrium">ثابت الاتزان</a></li>
+            <li><a href="#thermodynamics" class="calc-nav-item" data-calc="thermodynamics">الديناميكا الحرارية</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Calculator Content -->
+      <section class="calc-content" role="main">
+
+        <!-- Molar Mass Calculator -->
+        <div id="molar-mass" class="calc-panel active">
+          <div class="calc-header">
+            <h2>حاسبة الكتلة المولية</h2>
+            <p>احسب الكتلة المولية لأي مركب كيميائي بإدخال الصيغة الكيميائية</p>
+          </div>
+          
+          <div class="calc-body">
+            <div class="input-section">
+              <div class="input-group">
+                <label for="chemical-formula">الصيغة الكيميائية:</label>
+                <input type="text" id="chemical-formula" placeholder="مثال: H2SO4, CaCO3, NaCl" aria-describedby="formula-help">
+                <small id="formula-help">أدخل الصيغة الكيميائية باستخدام الرموز الإنجليزية للعناصر</small>
+              </div>
+              <button class="calc-btn" onclick="calculateMolarMass()">احسب الكتلة المولية</button>
+            </div>
+            
+            <div class="result-section" id="molar-mass-result">
+              <!-- النتائج ستظهر هنا -->
+            </div>
+            
+            <div class="info-section">
+              <h3>معلومات مفيدة:</h3>
+              <ul>
+                <li>الكتلة المولية هي كتلة مول واحد من المادة</li>
+                <li>وحدة القياس: جرام/مول (g/mol)</li>
+                <li>تساوي الكتلة الذرية النسبية للعنصر أو الكتلة الجزيئية النسبية للمركب</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dilution Calculator -->
+        <div id="dilution" class="calc-panel">
+          <div class="calc-header">
+            <h2>حاسبة تخفيف المحاليل</h2>
+            <p>احسب كميات المحلول المطلوبة للتخفيف باستخدام قانون C₁V₁ = C₂V₂</p>
+          </div>
+          
+          <div class="calc-body">
+            <div class="input-section">
+              <div class="input-grid">
+                <div class="input-group">
+                  <label for="c1">التركيز الأولي (C₁):</label>
+                  <input type="number" id="c1" placeholder="0" step="0.001">
+                  <select id="c1-unit">
+                    <option value="M">مولاري (M)</option>
+                    <option value="mM">ميلي مولاري (mM)</option>
+                    <option value="percent">نسبة مئوية (%)</option>
+                    <option value="ppm">جزء في المليون (ppm)</option>
+                  </select>
+                </div>
+                
+                <div class="input-group">
+                  <label for="v1">الحجم الأولي (V₁):</label>
+                  <input type="number" id="v1" placeholder="0" step="0.001">
+                  <select id="v1-unit">
+                    <option value="L">لتر (L)</option>
+                    <option value="mL">ميلي لتر (mL)</option>
+                    <option value="μL">ميكرو لتر (μL)</option>
+                  </select>
+                </div>
+                
+                <div class="input-group">
+                  <label for="c2">التركيز النهائي (C₂):</label>
+                  <input type="number" id="c2" placeholder="0" step="0.001">
+                  <select id="c2-unit">
+                    <option value="M">مولاري (M)</option>
+                    <option value="mM">ميلي مولاري (mM)</option>
+                    <option value="percent">نسبة مئوية (%)</option>
+                    <option value="ppm">جزء في المليون (ppm)</option>
+                  </select>
+                </div>
+                
+                <div class="input-group">
+                  <label for="v2">الحجم النهائي (V₂):</label>
+                  <input type="number" id="v2" placeholder="0" step="0.001">
+                  <select id="v2-unit">
+                    <option value="L">لتر (L)</option>
+                    <option value="mL">ميلي لتر (mL)</option>
+                    <option value="μL">ميكرو لتر (μL)</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="calc-options">
+                <label>احسب:</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="dilution-calc" value="v1" checked> الحجم الأولي (V₁)</label>
+                  <label><input type="radio" name="dilution-calc" value="c2"> التركيز النهائي (C₂)</label>
+                  <label><input type="radio" name="dilution-calc" value="v2"> الحجم النهائي (V₂)</label>
+                </div>
+              </div>
+              
+              <button class="calc-btn" onclick="calculateDilution()">احسب التخفيف</button>
+            </div>
+            
+            <div class="result-section" id="dilution-result">
+              <!-- النتائج ستظهر هنا -->
+            </div>
+            
+            <div class="info-section">
+              <h3>قانون التخفيف:</h3>
+              <div class="formula-display">C₁V₁ = C₂V₂</div>
+              <p>حيث C₁ و V₁ هما التركيز والحجم الأوليان، و C₂ و V₂ هما التركيز والحجم النهائيان</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- pH Calculator -->
+        <div id="ph-calculator" class="calc-panel">
+          <div class="calc-header">
+            <h2>حاسبة الأس الهيدروجيني (pH)</h2>
+            <p>احسب الأس الهيدروجيني والأس الهيدروكسيلي للمحاليل</p>
+          </div>
+          
+          <div class="calc-body">
+            <div class="input-section">
+              <div class="calc-tabs">
+                <button class="tab-btn active" onclick="showpHTab('concentration')">من التركيز</button>
+                <button class="tab-btn" onclick="showpHTab('ph-value')">من قيمة pH</button>
+              </div>
+              
+              <div id="concentration-tab" class="tab-content active">
+                <div class="input-group">
+                  <label for="solution-type">نوع المحلول:</label>
+                  <select id="solution-type" onchange="updatepHInputs()">
+                    <option value="acid">حمض قوي</option>
+                    <option value="base">قاعدة قوية</option>
+                    <option value="weak-acid">حمض ضعيف</option>
+                    <option value="weak-base">قاعدة ضعيفة</option>
+                  </select>
+                </div>
+                
+                <div class="input-group">
+                  <label for="concentration">التركيز (M):</label>
+                  <input type="number" id="concentration" placeholder="0" step="0.0001">
+                </div>
+                
+                <div class="input-group" id="ka-group" style="display: none;">
+                  <label for="ka-value">ثابت التأين (Ka):</label>
+                  <input type="number" id="ka-value" placeholder="0" step="1e-10">
+                </div>
+                
+                <div class="input-group" id="kb-group" style="display: none;">
+                  <label for="kb-value">ثابت التأين (Kb):</label>
+                  <input type="number" id="kb-value" placeholder="0" step="1e-10">
+                </div>
+              </div>
+              
+              <div id="ph-value-tab" class="tab-content">
+                <div class="input-group">
+                  <label for="ph-input">قيمة pH:</label>
+                  <input type="number" id="ph-input" placeholder="7" step="0.01" min="0" max="14">
+                </div>
+              </div>
+              
+              <button class="calc-btn" onclick="calculatepH()">احسب pH</button>
+            </div>
+            
+            <div class="result-section" id="ph-result">
+              <!-- النتائج ستظهر هنا -->
+            </div>
+            
+            <div class="info-section">
+              <h3>مقياس الأس الهيدروجيني:</h3>
+              <div class="ph-scale">
+                <div class="ph-item acidic">
+                  <span class="ph-range">0-6</span>
+                  <span class="ph-label">حمضي</span>
+                </div>
+                <div class="ph-item neutral">
+                  <span class="ph-range">7</span>
+                  <span class="ph-label">متعادل</span>
+                </div>
+                <div class="ph-item basic">
+                  <span class="ph-range">8-14</span>
+                  <span class="ph-label">قاعدي</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Molarity Calculator -->
+        <div id="molarity" class="calc-panel">
+          <div class="calc-header">
+            <h2>حاسبة التركيز المولاري</h2>
+            <p>احسب التركيز المولاري، عدد المولات، أو الحجم</p>
+          </div>
+          
+          <div class="calc-body">
+            <div class="input-section">
+              <div class="input-grid">
+                <div class="input-group">
+                  <label for="molarity-value">التركيز المولاري (M):</label>
+                  <input type="number" id="molarity-value" placeholder="0" step="0.001">
+                </div>
+                
+                <div class="input-group">
+                  <label for="moles">عدد المولات (mol):</label>
+                  <input type="number" id="moles" placeholder="0" step="0.001">
+                </div>
+                
+                <div class="input-group">
+                  <label for="volume-molarity">الحجم (L):</label>
+                  <input type="number" id="volume-molarity" placeholder="0" step="0.001">
+                </div>
+              </div>
+              
+              <div class="calc-options">
+                <label>احسب:</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="molarity-calc" value="molarity" checked> التركيز المولاري</label>
+                  <label><input type="radio" name="molarity-calc" value="moles"> عدد المولات</label>
+                  <label><input type="radio" name="molarity-calc" value="volume"> الحجم</label>
+                </div>
+              </div>
+              
+              <button class="calc-btn" onclick="calculateMolarity()">احسب</button>
+            </div>
+            
+            <div class="result-section" id="molarity-result">
+              <!-- النتائج ستظهر هنا -->
+            </div>
+            
+            <div class="info-section">
+              <h3>قانون التركيز المولاري:</h3>
+              <div class="formula-display">M = n / V</div>
+              <p>حيث M = التركيز المولاري، n = عدد المولات، V = الحجم باللتر</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gas Laws Calculator -->
+        <div id="gas-laws" class="calc-panel">
+          <div class="calc-header">
+            <h2>حاسبة قوانين الغازات</h2>
+            <p>احسب خصائص الغازات باستخدام قانون الغاز المثالي وقوانين أخرى</p>
+          </div>
+          
+          <div class="calc-body">
+            <div class="input-section">
+              <div class="calc-tabs">
+                <button class="tab-btn active" onclick="showGasTab('ideal-gas')">الغاز المثالي</button>
+                <button class="tab-btn" onclick="showGasTab('boyle')">قانون بويل</button>
+                <button class="tab-btn" onclick="showGasTab('charles')">قانون شارل</button>
+              </div>
+              
+              <div id="ideal-gas-tab" class="tab-content active">
+                <div class="input-grid">
+                  <div class="input-group">
+                    <label for="pressure">الضغط (atm):</label>
+                    <input type="number" id="pressure" placeholder="1" step="0.001">
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="volume-gas">الحجم (L):</label>
+                    <input type="number" id="volume-gas" placeholder="22.4" step="0.001">
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="moles-gas">عدد المولات (mol):</label>
+                    <input type="number" id="moles-gas" placeholder="1" step="0.001">
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="temperature">درجة الحرارة (K):</label>
+                    <input type="number" id="temperature" placeholder="273.15" step="0.01">
+                  </div>
+                </div>
+                
+                <div class="calc-options">
+                  <label>احسب:</label>
+                  <div class="radio-group">
+                    <label><input type="radio" name="gas-calc" value="pressure" checked> الضغط</label>
+                    <label><input type="radio" name="gas-calc" value="volume"> الحجم</label>
+                    <label><input type="radio" name="gas-calc" value="moles"> عدد المولات</label>
+                    <label><input type="radio" name="gas-calc" value="temperature"> درجة الحرارة</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="boyle-tab" class="tab-content">
+                <div class="input-grid">
+                  <div class="input-group">
+                    <label for="p1">الضغط الأولي (P₁):</label>
+                    <input type="number" id="p1" placeholder="1" step="0.001">
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="v1-boyle">الحجم الأولي (V₁):</label>
+                    <input type="number" id="v1-boyle" placeholder="22.4" step="0.001">
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="p2">الضغط النهائي (P₂):</label>
+                    <input type="number" id="p2" placeholder="2" step="0.001">
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="v2-boyle">الحجم النهائي (V₂):</label>
+                    <input type="number" id="v2-boyle" placeholder="0" step="0.001">
+                  </div>
+                </div>
+              </div>
+              
+              <div id="charles-tab" class="tab-content">
+                <div class="input-grid">
+                  <div class="input-group">
+                    <label for="v1-charles">الحجم الأولي (V₁):</label>
+                    <input type="number" id="v1-charles" placeholder="22.4" step="0.001">
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="t1">درجة الحرارة الأولية (T₁) K:</label>
+                    <input type="number" id="t1" placeholder="273.15" step="0.01">
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="v2-charles">الحجم النهائي (V₂):</label>
+                    <input type="number" id="v2-charles" placeholder="0" step="0.001">
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="t2">درجة الحرارة النهائية (T₂) K:</label>
+                    <input type="number" id="t2" placeholder="373.15" step="0.01">
+                  </div>
+                </div>
+              </div>
+              
+              <button class="calc-btn" onclick="calculateGasLaws()">احسب</button>
+            </div>
+            
+            <div class="result-section" id="gas-result">
+              <!-- النتائج ستظهر هنا -->
+            </div>
+            
+            <div class="info-section">
+              <h3>قوانين الغازات:</h3>
+              <ul>
+                <li><strong>قانون الغاز المثالي:</strong> PV = nRT</li>
+                <li><strong>قانون بويل:</strong> P₁V₁ = P₂V₂ (عند ثبوت درجة الحرارة)</li>
+                <li><strong>قانون شارل:</strong> V₁/T₁ = V₂/T₂ (عند ثبوت الضغط)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional calculators would be implemented similarly -->
+        <div id="stoichiometry" class="calc-panel">
+          <div class="calc-header">
+            <h2>حاسبة الحسابات الكيميائية</h2>
+            <p>قريباً - حسابات التفاعلات الكيميائية والنسب المولية</p>
+          </div>
+          <div class="calc-body">
+            <div class="coming-soon">
+              <h3>قيد التطوير</h3>
+              <p>هذه الحاسبة قيد التطوير وستكون متاحة قريباً</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="equilibrium" class="calc-panel">
+          <div class="calc-header">
+            <h2>حاسبة ثابت الاتزان</h2>
+            <p>قريباً - حسابات ثوابت الاتزان الكيميائي</p>
+          </div>
+          <div class="calc-body">
+            <div class="coming-soon">
+              <h3>قيد التطوير</h3>
+              <p>هذه الحاسبة قيد التطوير وستكون متاحة قريباً</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="thermodynamics" class="calc-panel">
+          <div class="calc-header">
+            <h2>حاسبة الديناميكا الحرارية</h2>
+            <p>قريباً - حسابات الطاقة والإنتالبيا والإنتروبيا</p>
+          </div>
+          <div class="calc-body">
+            <div class="coming-soon">
+              <h3>قيد التطوير</h3>
+              <p>هذه الحاسبة قيد التطوير وستكون متاحة قريباً</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" title="العودة للأعلى" aria-label="العودة إلى أعلى الصفحة">↑</button>
+
+  <!-- الفوتر -->
+  <footer class="footer-custom">
+    <p>الرابطة الكيميائية | Chemical Network | © 2025</p>
+    <nav class="footer-nav" aria-label="روابط الفوتر">
+      <a href="index.html">الرئيسية</a> |
+      <a href="index.html#services">الخدمات</a> |
+      <a href="index.html#blog">مدونة</a> |
+      <a href="index.html#contact">تواصل معنا</a>
+    </nav>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    // Atomic masses for common elements
+    const atomicMasses = {
+      'H': 1.008, 'He': 4.003, 'Li': 6.941, 'Be': 9.012, 'B': 10.811, 'C': 12.011,
+      'N': 14.007, 'O': 15.999, 'F': 18.998, 'Ne': 20.180, 'Na': 22.990, 'Mg': 24.305,
+      'Al': 26.982, 'Si': 28.086, 'P': 30.974, 'S': 32.065, 'Cl': 35.453, 'Ar': 39.948,
+      'K': 39.098, 'Ca': 40.078, 'Sc': 44.956, 'Ti': 47.867, 'V': 50.942, 'Cr': 51.996,
+      'Mn': 54.938, 'Fe': 55.845, 'Co': 58.933, 'Ni': 58.693, 'Cu': 63.546, 'Zn': 65.38,
+      'Ga': 69.723, 'Ge': 72.64, 'As': 74.922, 'Se': 78.96, 'Br': 79.904, 'Kr': 83.798,
+      'Rb': 85.468, 'Sr': 87.62, 'Y': 88.906, 'Zr': 91.224, 'Nb': 92.906, 'Mo': 95.96,
+      'Tc': 98, 'Ru': 101.07, 'Rh': 102.906, 'Pd': 106.42, 'Ag': 107.868, 'Cd': 112.411,
+      'In': 114.818, 'Sn': 118.71, 'Sb': 121.76, 'Te': 127.6, 'I': 126.904, 'Xe': 131.293,
+      'Cs': 132.905, 'Ba': 137.327, 'La': 138.905, 'Ce': 140.116, 'Pr': 140.908, 'Nd': 144.242,
+      'Pm': 145, 'Sm': 150.36, 'Eu': 151.964, 'Gd': 157.25, 'Tb': 158.925, 'Dy': 162.5,
+      'Ho': 164.93, 'Er': 167.259, 'Tm': 168.934, 'Yb': 173.054, 'Lu': 174.967, 'Hf': 178.49,
+      'Ta': 180.948, 'W': 183.84, 'Re': 186.207, 'Os': 190.23, 'Ir': 192.217, 'Pt': 195.084,
+      'Au': 196.967, 'Hg': 200.59, 'Tl': 204.383, 'Pb': 207.2, 'Bi': 208.98, 'Po': 209,
+      'At': 210, 'Rn': 222, 'Fr': 223, 'Ra': 226, 'Ac': 227, 'Th': 232.038, 'Pa': 231.036,
+      'U': 238.029, 'Np': 237, 'Pu': 244, 'Am': 243, 'Cm': 247, 'Bk': 247, 'Cf': 251,
+      'Es': 252, 'Fm': 257, 'Md': 258, 'No': 259, 'Lr': 262, 'Rf': 267, 'Db': 268,
+      'Sg': 271, 'Bh': 272, 'Hs': 270, 'Mt': 276, 'Ds': 281, 'Rg': 280, 'Cn': 285,
+      'Nh': 284, 'Fl': 289, 'Mc': 288, 'Lv': 293, 'Ts': 294, 'Og': 294
+    };
+
+    // Calculator navigation
+    document.querySelectorAll('.calc-nav-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove active class from all nav items and panels
+        document.querySelectorAll('.calc-nav-item').forEach(nav => nav.classList.remove('active'));
+        document.querySelectorAll('.calc-panel').forEach(panel => panel.classList.remove('active'));
+        
+        // Add active class to clicked nav item
+        this.classList.add('active');
+        
+        // Show corresponding panel
+        const targetPanel = this.getAttribute('data-calc');
+        document.getElementById(targetPanel).classList.add('active');
+      });
+    });
+
+    // Molar Mass Calculator
+    function calculateMolarMass() {
+      const formula = document.getElementById('chemical-formula').value.trim();
+      if (!formula) {
+        document.getElementById('molar-mass-result').innerHTML = '<p class="error">يرجى إدخال الصيغة الكيميائية</p>';
+        return;
+      }
+
+      try {
+        const molarMass = parseMolecularFormula(formula);
+        const breakdown = getFormulaBreakdown(formula);
+        
+        document.getElementById('molar-mass-result').innerHTML = `
+          <div class="result-card">
+            <h3>النتيجة:</h3>
+            <div class="main-result">
+              <span class="result-value">${molarMass.toFixed(3)}</span>
+              <span class="result-unit">g/mol</span>
+            </div>
+            <div class="breakdown">
+              <h4>تفصيل الحساب:</h4>
+              ${breakdown}
+            </div>
+          </div>
+        `;
+      } catch (error) {
+        document.getElementById('molar-mass-result').innerHTML = `<p class="error">خطأ في الصيغة الكيميائية: ${error.message}</p>`;
+      }
+    }
+
+    function parseMolecularFormula(formula) {
+      let totalMass = 0;
+      const regex = /([A-Z][a-z]?)(\d*)/g;
+      let match;
+
+      while ((match = regex.exec(formula)) !== null) {
+        const element = match[1];
+        const count = match[2] ? parseInt(match[2]) : 1;
+        
+        if (!atomicMasses[element]) {
+          throw new Error(`عنصر غير معروف: ${element}`);
+        }
+        
+        totalMass += atomicMasses[element] * count;
+      }
+
+      return totalMass;
+    }
+
+    function getFormulaBreakdown(formula) {
+      const regex = /([A-Z][a-z]?)(\d*)/g;
+      let match;
+      let breakdown = '<ul>';
+
+      while ((match = regex.exec(formula)) !== null) {
+        const element = match[1];
+        const count = match[2] ? parseInt(match[2]) : 1;
+        const mass = atomicMasses[element] * count;
+        
+        breakdown += `<li>${element}: ${atomicMasses[element]} × ${count} = ${mass.toFixed(3)} g/mol</li>`;
+      }
+
+      breakdown += '</ul>';
+      return breakdown;
+    }
+
+    // Dilution Calculator
+    function calculateDilution() {
+      const c1 = parseFloat(document.getElementById('c1').value);
+      const v1 = parseFloat(document.getElementById('v1').value);
+      const c2 = parseFloat(document.getElementById('c2').value);
+      const v2 = parseFloat(document.getElementById('v2').value);
+      
+      const calcType = document.querySelector('input[name="dilution-calc"]:checked').value;
+      
+      let result, resultText;
+      
+      try {
+        switch(calcType) {
+          case 'v1':
+            if (!c1 || !c2 || !v2) throw new Error('يرجى إدخال جميع القيم المطلوبة');
+            result = (c2 * v2) / c1;
+            resultText = `الحجم الأولي المطلوب = ${result.toFixed(3)} ${document.getElementById('v1-unit').value}`;
+            break;
+          case 'c2':
+            if (!c1 || !v1 || !v2) throw new Error('يرجى إدخال جميع القيم المطلوبة');
+            result = (c1 * v1) / v2;
+            resultText = `التركيز النهائي = ${result.toFixed(3)} ${document.getElementById('c2-unit').value}`;
+            break;
+          case 'v2':
+            if (!c1 || !v1 || !c2) throw new Error('يرجى إدخال جميع القيم المطلوبة');
+            result = (c1 * v1) / c2;
+            resultText = `الحجم النهائي = ${result.toFixed(3)} ${document.getElementById('v2-unit').value}`;
+            break;
+        }
+        
+        document.getElementById('dilution-result').innerHTML = `
+          <div class="result-card">
+            <h3>النتيجة:</h3>
+            <p class="main-result">${resultText}</p>
+            <div class="formula-used">
+              <h4>القانون المستخدم:</h4>
+              <p>C₁V₁ = C₂V₂</p>
+            </div>
+          </div>
+        `;
+      } catch (error) {
+        document.getElementById('dilution-result').innerHTML = `<p class="error">${error.message}</p>`;
+      }
+    }
+
+    // pH Calculator functions
+    function showpHTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      
+      document.getElementById(tabName + '-tab').classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    function updatepHInputs() {
+      const solutionType = document.getElementById('solution-type').value;
+      const kaGroup = document.getElementById('ka-group');
+      const kbGroup = document.getElementById('kb-group');
+      
+      kaGroup.style.display = solutionType === 'weak-acid' ? 'block' : 'none';
+      kbGroup.style.display = solutionType === 'weak-base' ? 'block' : 'none';
+    }
+
+    function calculatepH() {
+      const activeTab = document.querySelector('.tab-content.active').id;
+      
+      if (activeTab === 'concentration-tab') {
+        calculatepHFromConcentration();
+      } else {
+        calculateFrompH();
+      }
+    }
+
+    function calculatepHFromConcentration() {
+      const solutionType = document.getElementById('solution-type').value;
+      const concentration = parseFloat(document.getElementById('concentration').value);
+      
+      if (!concentration) {
+        document.getElementById('ph-result').innerHTML = '<p class="error">يرجى إدخال التركيز</p>';
+        return;
+      }
+      
+      let pH, pOH, result;
+      
+      switch(solutionType) {
+        case 'acid':
+          pH = -Math.log10(concentration);
+          pOH = 14 - pH;
+          result = `
+            <div class="result-card">
+              <h3>النتيجة:</h3>
+              <p>pH = ${pH.toFixed(2)}</p>
+              <p>pOH = ${pOH.toFixed(2)}</p>
+              <p>[H⁺] = ${concentration.toExponential(2)} M</p>
+              <p>[OH⁻] = ${(1e-14/concentration).toExponential(2)} M</p>
+              <p class="solution-nature ${pH < 7 ? 'acidic' : pH > 7 ? 'basic' : 'neutral'}">
+                المحلول: ${pH < 7 ? 'حمضي' : pH > 7 ? 'قاعدي' : 'متعادل'}
+              </p>
+            </div>
+          `;
+          break;
+        case 'base':
+          pOH = -Math.log10(concentration);
+          pH = 14 - pOH;
+          result = `
+            <div class="result-card">
+              <h3>النتيجة:</h3>
+              <p>pH = ${pH.toFixed(2)}</p>
+              <p>pOH = ${pOH.toFixed(2)}</p>
+              <p>[OH⁻] = ${concentration.toExponential(2)} M</p>
+              <p>[H⁺] = ${(1e-14/concentration).toExponential(2)} M</p>
+              <p class="solution-nature ${pH < 7 ? 'acidic' : pH > 7 ? 'basic' : 'neutral'}">
+                المحلول: ${pH < 7 ? 'حمضي' : pH > 7 ? 'قاعدي' : 'متعادل'}
+              </p>
+            </div>
+          `;
+          break;
+        default:
+          result = '<p class="error">حسابات الأحماض والقواعد الضعيفة قيد التطوير</p>';
+      }
+      
+      document.getElementById('ph-result').innerHTML = result;
+    }
+
+    function calculateFrompH() {
+      const pH = parseFloat(document.getElementById('ph-input').value);
+      
+      if (pH === undefined || pH < 0 || pH > 14) {
+        document.getElementById('ph-result').innerHTML = '<p class="error">يرجى إدخال قيمة pH صحيحة (0-14)</p>';
+        return;
+      }
+      
+      const pOH = 14 - pH;
+      const hConcentration = Math.pow(10, -pH);
+      const ohConcentration = Math.pow(10, -pOH);
+      
+      document.getElementById('ph-result').innerHTML = `
+        <div class="result-card">
+          <h3>النتيجة:</h3>
+          <p>pH = ${pH.toFixed(2)}</p>
+          <p>pOH = ${pOH.toFixed(2)}</p>
+          <p>[H⁺] = ${hConcentration.toExponential(2)} M</p>
+          <p>[OH⁻] = ${ohConcentration.toExponential(2)} M</p>
+          <p class="solution-nature ${pH < 7 ? 'acidic' : pH > 7 ? 'basic' : 'neutral'}">
+            المحلول: ${pH < 7 ? 'حمضي' : pH > 7 ? 'قاعدي' : 'متعادل'}
+          </p>
+        </div>
+      `;
+    }
+
+    // Molarity Calculator
+    function calculateMolarity() {
+      const molarity = parseFloat(document.getElementById('molarity-value').value);
+      const moles = parseFloat(document.getElementById('moles').value);
+      const volume = parseFloat(document.getElementById('volume-molarity').value);
+      
+      const calcType = document.querySelector('input[name="molarity-calc"]:checked').value;
+      
+      let result, resultText;
+      
+      try {
+        switch(calcType) {
+          case 'molarity':
+            if (!moles || !volume) throw new Error('يرجى إدخال عدد المولات والحجم');
+            result = moles / volume;
+            resultText = `التركيز المولاري = ${result.toFixed(3)} M`;
+            break;
+          case 'moles':
+            if (!molarity || !volume) throw new Error('يرجى إدخال التركيز المولاري والحجم');
+            result = molarity * volume;
+            resultText = `عدد المولات = ${result.toFixed(3)} mol`;
+            break;
+          case 'volume':
+            if (!molarity || !moles) throw new Error('يرجى إدخال التركيز المولاري وعدد المولات');
+            result = moles / molarity;
+            resultText = `الحجم = ${result.toFixed(3)} L`;
+            break;
+        }
+        
+        document.getElementById('molarity-result').innerHTML = `
+          <div class="result-card">
+            <h3>النتيجة:</h3>
+            <p class="main-result">${resultText}</p>
+            <div class="formula-used">
+              <h4>القانون المستخدم:</h4>
+              <p>M = n / V</p>
+            </div>
+          </div>
+        `;
+      } catch (error) {
+        document.getElementById('molarity-result').innerHTML = `<p class="error">${error.message}</p>`;
+      }
+    }
+
+    // Gas Laws Calculator
+    function showGasTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      
+      document.getElementById(tabName + '-tab').classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    function calculateGasLaws() {
+      const activeTab = document.querySelector('.tab-content.active').id;
+      
+      switch(activeTab) {
+        case 'ideal-gas-tab':
+          calculateIdealGas();
+          break;
+        case 'boyle-tab':
+          calculateBoyle();
+          break;
+        case 'charles-tab':
+          calculateCharles();
+          break;
+      }
+    }
+
+    function calculateIdealGas() {
+      const pressure = parseFloat(document.getElementById('pressure').value);
+      const volume = parseFloat(document.getElementById('volume-gas').value);
+      const moles = parseFloat(document.getElementById('moles-gas').value);
+      const temperature = parseFloat(document.getElementById('temperature').value);
+      
+      const calcType = document.querySelector('input[name="gas-calc"]:checked').value;
+      const R = 0.0821; // L·atm/(mol·K)
+      
+      let result, resultText;
+      
+      try {
+        switch(calcType) {
+          case 'pressure':
+            if (!volume || !moles || !temperature) throw new Error('يرجى إدخال الحجم وعدد المولات ودرجة الحرارة');
+            result = (moles * R * temperature) / volume;
+            resultText = `الضغط = ${result.toFixed(3)} atm`;
+            break;
+          case 'volume':
+            if (!pressure || !moles || !temperature) throw new Error('يرجى إدخال الضغط وعدد المولات ودرجة الحرارة');
+            result = (moles * R * temperature) / pressure;
+            resultText = `الحجم = ${result.toFixed(3)} L`;
+            break;
+          case 'moles':
+            if (!pressure || !volume || !temperature) throw new Error('يرجى إدخال الضغط والحجم ودرجة الحرارة');
+            result = (pressure * volume) / (R * temperature);
+            resultText = `عدد المولات = ${result.toFixed(3)} mol`;
+            break;
+          case 'temperature':
+            if (!pressure || !volume || !moles) throw new Error('يرجى إدخال الضغط والحجم وعدد المولات');
+            result = (pressure * volume) / (moles * R);
+            resultText = `درجة الحرارة = ${result.toFixed(2)} K = ${(result - 273.15).toFixed(2)} °C`;
+            break;
+        }
+        
+        document.getElementById('gas-result').innerHTML = `
+          <div class="result-card">
+            <h3>النتيجة:</h3>
+            <p class="main-result">${resultText}</p>
+            <div class="formula-used">
+              <h4>القانون المستخدم:</h4>
+              <p>PV = nRT</p>
+            </div>
+          </div>
+        `;
+      } catch (error) {
+        document.getElementById('gas-result').innerHTML = `<p class="error">${error.message}</p>`;
+      }
+    }
+
+    function calculateBoyle() {
+      const p1 = parseFloat(document.getElementById('p1').value);
+      const v1 = parseFloat(document.getElementById('v1-boyle').value);
+      const p2 = parseFloat(document.getElementById('p2').value);
+      
+      if (!p1 || !v1 || !p2) {
+        document.getElementById('gas-result').innerHTML = '<p class="error">يرجى إدخال P₁ و V₁ و P₂</p>';
+        return;
+      }
+      
+      const v2 = (p1 * v1) / p2;
+      
+      document.getElementById('gas-result').innerHTML = `
+        <div class="result-card">
+          <h3>النتيجة:</h3>
+          <p class="main-result">الحجم النهائي (V₂) = ${v2.toFixed(3)} L</p>
+          <div class="formula-used">
+            <h4>قانون بويل:</h4>
+            <p>P₁V₁ = P₂V₂</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function calculateCharles() {
+      const v1 = parseFloat(document.getElementById('v1-charles').value);
+      const t1 = parseFloat(document.getElementById('t1').value);
+      const t2 = parseFloat(document.getElementById('t2').value);
+      
+      if (!v1 || !t1 || !t2) {
+        document.getElementById('gas-result').innerHTML = '<p class="error">يرجى إدخال V₁ و T₁ و T₂</p>';
+        return;
+      }
+      
+      const v2 = (v1 * t2) / t1;
+      
+      document.getElementById('gas-result').innerHTML = `
+        <div class="result-card">
+          <h3>النتيجة:</h3>
+          <p class="main-result">الحجم النهائي (V₂) = ${v2.toFixed(3)} L</p>
+          <div class="formula-used">
+            <h4>قانون شارل:</h4>
+            <p>V₁/T₁ = V₂/T₂</p>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
+
